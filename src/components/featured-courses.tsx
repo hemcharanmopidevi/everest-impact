@@ -14,12 +14,15 @@ export function FeaturedCourses() {
   };
 
   return (
-    <section className="bg-muted/40 py-12 dark:bg-muted/20 md:py-16">
+    <section className="reveal bg-[#f4f7ff] py-14 dark:bg-muted/20 md:py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-6 flex items-end justify-between gap-4">
+        <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="mb-1 text-sm font-semibold text-primary">Popular</p>
-            <h3 className="text-2xl font-bold tracking-tight md:text-3xl">Featured Courses</h3>
+            <p className="eyebrow">Popular</p>
+            <h3 className="text-3xl font-extrabold tracking-tight md:text-4xl">Featured Courses</h3>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              Big discounts on live and recorded batches — pick your exam and start today.
+            </p>
           </div>
           <div className="flex items-center gap-2">
             <Link
@@ -46,7 +49,7 @@ export function FeaturedCourses() {
             </button>
           </div>
         </div>
-        <div ref={ref} className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+        <div ref={ref} className="flex gap-5 overflow-x-auto scrollbar-hide px-1 pb-6 pt-4">
           {courses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}

@@ -19,26 +19,30 @@ export function HeroSlider() {
 
   const prev = () => setIndex((i) => (i - 1 + sliders.length) % sliders.length);
   const next = () => setIndex((i) => (i + 1) % sliders.length);
+  const active = sliders[index];
 
   return (
     <section className="relative w-full bg-muted/40">
       <div className="relative mx-auto max-w-6xl overflow-hidden px-4 pt-4">
-        <div className="relative overflow-hidden rounded-2xl bg-[#071633]">
+        <div
+          className="relative overflow-hidden rounded-2xl bg-[#071633] transition-[aspect-ratio] duration-500 ease-out"
+          style={{ aspectRatio: `${active.width} / ${active.height}` }}
+        >
           <div
-            className="flex transition-transform duration-500 ease-out"
+            className="flex h-full transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {sliders.map((slide) => (
               <Link
                 key={slide.id}
                 href={slide.link}
-                className="relative aspect-[1024/280] min-w-full"
+                className="relative h-full w-full min-w-full shrink-0"
               >
                 <Image
                   src={slide.image}
                   alt="Promotional banner"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(min-width: 1280px) 1120px, 100vw"
                   priority={slide.id === sliders[0].id}
                 />

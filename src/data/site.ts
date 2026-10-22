@@ -33,30 +33,40 @@ export const sliders = [
     image: "/banner-super-saturday.png",
     link: "/test-series",
     fit: "contain" as const,
+    width: 846,
+    height: 466,
   },
   {
     id: "10",
     image:
       "https://appx-content-v2.classx.co.in/website_slider/2025-12-13-0_9597799620042444.jpg",
     link: "/courses/computers-course-for-ssc-cgl-tier-ii",
+    width: 1920,
+    height: 628,
   },
   {
     id: "7",
     image:
       "https://appx-content-v2.classx.co.in/website_slider/2026-09-15-0_9946619036606326.png",
     link: "/courses?category=Live%20Courses",
+    width: 2048,
+    height: 768,
   },
   {
     id: "13",
     image:
       "https://appx-content-v2.classx.co.in/website_slider/2026-04-19-0_19847042440824658.jpg",
     link: "/courses",
+    width: 1920,
+    height: 628,
   },
   {
     id: "9",
     image:
       "https://appx-content-v2.classx.co.in/website_slider/2026-10-16-0_9275426921327663.png",
     link: "/courses/ssc-cgl-chsl-2027-tier-1-recorded-6-months-validity",
+    width: 2172,
+    height: 724,
   },
 ];
 

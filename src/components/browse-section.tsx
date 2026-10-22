@@ -16,16 +16,16 @@ import {
 import { useRef, type ReactNode } from "react";
 import { browseItems, type BrowseItem } from "@/data/site";
 
-const icons: Record<BrowseItem["icon"], ReactNode> = {
-  live: <Radio className="size-6 text-primary" />,
-  recorded: <BookOpen className="size-6 text-primary" />,
-  test: <ClipboardList className="size-6 text-primary" />,
-  rrb: <Train className="size-6 text-primary" />,
-  "free-test": <ClipboardList className="size-6 text-primary" />,
-  free: <Gift className="size-6 text-primary" />,
-  links: <Link2 className="size-6 text-primary" />,
-  result: <LayoutDashboard className="size-6 text-primary" />,
-  youtube: <Video className="size-6 text-primary" />,
+const icons: Record<BrowseItem["icon"], { icon: ReactNode; color: string }> = {
+  live: { icon: <Radio className="size-6" />, color: "#1a5fe0" },
+  recorded: { icon: <BookOpen className="size-6" />, color: "#7a4be0" },
+  test: { icon: <ClipboardList className="size-6" />, color: "#12a679" },
+  rrb: { icon: <Train className="size-6" />, color: "#e0446b" },
+  "free-test": { icon: <ClipboardList className="size-6" />, color: "#0fa3c9" },
+  free: { icon: <Gift className="size-6" />, color: "#e07a10" },
+  links: { icon: <Link2 className="size-6" />, color: "#0b1530" },
+  result: { icon: <LayoutDashboard className="size-6" />, color: "#0f7a5c" },
+  youtube: { icon: <Video className="size-6" />, color: "#dc2626" },
 };
 
 export function BrowseSection() {
@@ -36,12 +36,12 @@ export function BrowseSection() {
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="reveal py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-6 flex items-end justify-between gap-4">
+        <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="mb-1 text-sm font-semibold text-primary">Explore</p>
-            <h3 className="text-2xl font-bold tracking-tight md:text-3xl">Browse Categories</h3>
+            <p className="eyebrow">Explore</p>
+            <h3 className="text-3xl font-extrabold tracking-tight md:text-4xl">Browse Categories</h3>
           </div>
           <div className="flex gap-2">
             <button
@@ -62,15 +62,18 @@ export function BrowseSection() {
             </button>
           </div>
         </div>
-        <div ref={ref} className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+        <div ref={ref} className="flex gap-5 overflow-x-auto scrollbar-hide px-1 pb-4 pt-3">
           {browseItems.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="flex w-[150px] shrink-0 flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:w-[168px]"
+              className="flex w-[150px] shrink-0 flex-col items-center gap-3.5 rounded-[20px] bg-card px-3 py-6 text-center shadow-[0_8px_0_#dbe4fa] ring-1 ring-border/60 transition-transform duration-300 hover:-translate-y-2.5 dark:shadow-[0_8px_0_rgba(0,0,0,0.35)] sm:w-[168px]"
             >
-              <div className="flex size-14 items-center justify-center rounded-2xl bg-primary/10">
-                {icons[item.icon]}
+              <div
+                className="flex size-14 items-center justify-center rounded-2xl text-white shadow-[0_8px_0_rgba(0,0,0,0.2)]"
+                style={{ background: icons[item.icon].color }}
+              >
+                {icons[item.icon].icon}
               </div>
               <h3 className="text-sm font-semibold leading-snug">{item.title}</h3>
             </Link>
