@@ -27,23 +27,21 @@ export default function HomePage() {
       <ExpertTeam />
       <Testimonials />
 
-      <section className="reveal py-14 md:py-20">
+      <section className="reveal py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-8 flex items-end justify-between gap-4">
+          <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
             <div>
               <p className="eyebrow">Free learning</p>
-              <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-                Watch YouTube Playlist
-              </h2>
+              <h2 className="section-title">Watch YouTube Playlist</h2>
             </div>
             <Link
               href="/videos"
-              className="text-sm font-semibold text-primary hover:underline"
+              className="shrink-0 whitespace-nowrap text-sm font-semibold text-primary hover:underline"
             >
               View all
             </Link>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {youtubeVideos.map((video, i) => (
               <a
                 key={video.id}
@@ -56,11 +54,11 @@ export default function HomePage() {
                   className="flex aspect-video items-center justify-center"
                   style={{ background: videoColors[i % videoColors.length] }}
                 >
-                  <span className="play-pulse flex size-[68px] items-center justify-center rounded-full bg-white">
-                    <span className="ml-1.5 border-y-[12px] border-l-[20px] border-y-transparent border-l-[#0b1530]" />
+                  <span className="play-pulse flex size-14 items-center justify-center rounded-full bg-white sm:size-[68px]">
+                    <span className="ml-1.5 border-y-[10px] border-l-[17px] border-y-transparent border-l-[#0b1530] sm:border-y-[12px] sm:border-l-[20px]" />
                   </span>
                 </div>
-                <p className="p-5 text-[15px] font-bold leading-snug">{video.title}</p>
+                <p className="p-4 text-sm font-bold leading-snug sm:p-5 sm:text-[15px]">{video.title}</p>
               </a>
             ))}
           </div>

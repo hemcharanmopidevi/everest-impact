@@ -73,6 +73,9 @@ body {
   .eyebrow {
     @apply mb-1 text-sm font-bold tracking-wide text-primary;
   }
+  .section-title {
+    @apply text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl;
+  }
 }
 
 @keyframes drift {
@@ -125,15 +128,30 @@ body {
 }
 
 .cube-stage {
-  perspective: 1000px;
+  perspective: 900px;
+  --cube: 104px;
+}
+@media (min-width: 640px) {
+  .cube-stage {
+    perspective: 1000px;
+    --cube: 140px;
+  }
+  .cube {
+    top: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .cube-stage {
+    --cube: 170px;
+  }
 }
 .cube {
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: 170px;
-  height: 170px;
-  margin: -85px 0 0 -85px;
+  top: 44%;
+  width: var(--cube);
+  height: var(--cube);
+  margin: calc(var(--cube) / -2) 0 0 calc(var(--cube) / -2);
   transform-style: preserve-3d;
   animation: cube-spin 16s linear infinite;
 }
@@ -142,18 +160,18 @@ body {
   inset: 0;
   display: grid;
   place-items: center;
-  font-size: 32px;
+  font-size: calc(var(--cube) * 0.19);
   font-weight: 800;
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.35);
-  border-radius: 16px;
+  border-radius: calc(var(--cube) * 0.1);
 }
-.cube > b:nth-child(1) { transform: translateZ(85px); background: rgba(26, 95, 224, 0.87); }
-.cube > b:nth-child(2) { transform: rotateY(180deg) translateZ(85px); background: rgba(255, 138, 31, 0.87); }
-.cube > b:nth-child(3) { transform: rotateY(90deg) translateZ(85px); background: rgba(18, 166, 121, 0.87); }
-.cube > b:nth-child(4) { transform: rotateY(-90deg) translateZ(85px); background: rgba(122, 75, 224, 0.87); }
-.cube > b:nth-child(5) { transform: rotateX(90deg) translateZ(85px); background: rgba(224, 68, 107, 0.87); }
-.cube > b:nth-child(6) { transform: rotateX(-90deg) translateZ(85px); background: rgba(15, 163, 201, 0.87); }
+.cube > b:nth-child(1) { transform: translateZ(calc(var(--cube) / 2)); background: rgba(26, 95, 224, 0.87); }
+.cube > b:nth-child(2) { transform: rotateY(180deg) translateZ(calc(var(--cube) / 2)); background: rgba(255, 138, 31, 0.87); }
+.cube > b:nth-child(3) { transform: rotateY(90deg) translateZ(calc(var(--cube) / 2)); background: rgba(18, 166, 121, 0.87); }
+.cube > b:nth-child(4) { transform: rotateY(-90deg) translateZ(calc(var(--cube) / 2)); background: rgba(122, 75, 224, 0.87); }
+.cube > b:nth-child(5) { transform: rotateX(90deg) translateZ(calc(var(--cube) / 2)); background: rgba(224, 68, 107, 0.87); }
+.cube > b:nth-child(6) { transform: rotateX(-90deg) translateZ(calc(var(--cube) / 2)); background: rgba(15, 163, 201, 0.87); }
 
 .float-card {
   animation: float-card 6s ease-in-out infinite;

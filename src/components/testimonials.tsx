@@ -45,9 +45,10 @@ export function Testimonials() {
     <section id="testimonials" className="bg-[#f3f4f6] py-12 dark:bg-transparent md:py-16">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-foreground md:text-3xl">
-            Testimonials
-          </h2>
+          <div>
+            <p className="eyebrow">Student voices</p>
+            <h2 className="section-title text-slate-900 dark:text-foreground">Testimonials</h2>
+          </div>
           <div className="flex items-center gap-2">
             <a
               href="#contact"

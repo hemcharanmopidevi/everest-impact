@@ -36,14 +36,14 @@ export function BrowseSection() {
   };
 
   return (
-    <section className="reveal py-14 md:py-20">
+    <section className="reveal py-12 md:py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
           <div>
             <p className="eyebrow">Explore</p>
-            <h3 className="text-3xl font-extrabold tracking-tight md:text-4xl">Browse Categories</h3>
+            <h3 className="section-title">Browse Categories</h3>
           </div>
-          <div className="flex gap-2">
+          <div className="flex shrink-0 gap-2">
             <button
               type="button"
               aria-label="Scroll left"
@@ -62,20 +62,20 @@ export function BrowseSection() {
             </button>
           </div>
         </div>
-        <div ref={ref} className="flex gap-5 overflow-x-auto scrollbar-hide px-1 pb-4 pt-3">
+        <div ref={ref} className="flex gap-3.5 overflow-x-auto scrollbar-hide px-1 pb-4 pt-3 sm:gap-5">
           {browseItems.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="flex w-[150px] shrink-0 flex-col items-center gap-3.5 rounded-[20px] bg-card px-3 py-6 text-center shadow-[0_8px_0_#dbe4fa] ring-1 ring-border/60 transition-transform duration-300 hover:-translate-y-2.5 dark:shadow-[0_8px_0_rgba(0,0,0,0.35)] sm:w-[168px]"
+              className="flex w-[128px] shrink-0 flex-col items-center gap-3 rounded-[18px] bg-card px-2 py-5 text-center shadow-[0_6px_0_#dbe4fa] ring-1 ring-border/60 transition-transform duration-300 hover:-translate-y-2.5 dark:shadow-[0_6px_0_rgba(0,0,0,0.35)] sm:w-[168px] sm:gap-3.5 sm:rounded-[20px] sm:px-3 sm:py-6 sm:shadow-[0_8px_0_#dbe4fa]"
             >
               <div
-                className="flex size-14 items-center justify-center rounded-2xl text-white shadow-[0_8px_0_rgba(0,0,0,0.2)]"
+                className="flex size-12 items-center justify-center rounded-2xl text-white shadow-[0_6px_0_rgba(0,0,0,0.2)] sm:size-14"
                 style={{ background: icons[item.icon].color }}
               >
                 {icons[item.icon].icon}
               </div>
-              <h3 className="text-sm font-semibold leading-snug">{item.title}</h3>
+              <h3 className="text-[13px] font-semibold leading-snug sm:text-sm">{item.title}</h3>
             </Link>
           ))}
         </div>

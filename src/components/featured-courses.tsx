@@ -14,17 +14,17 @@ export function FeaturedCourses() {
   };
 
   return (
-    <section className="reveal bg-[#f4f7ff] py-14 dark:bg-muted/20 md:py-20">
+    <section className="reveal bg-[#f4f7ff] py-12 dark:bg-muted/20 md:py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
           <div>
             <p className="eyebrow">Popular</p>
-            <h3 className="text-3xl font-extrabold tracking-tight md:text-4xl">Featured Courses</h3>
-            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+            <h3 className="section-title">Featured Courses</h3>
+            <p className="mt-2 hidden text-sm text-muted-foreground sm:block md:text-base">
               Big discounts on live and recorded batches — pick your exam and start today.
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <Link
               href="/courses"
               className="mr-2 hidden text-sm font-semibold text-primary hover:underline sm:inline"

@@ -33,11 +33,9 @@ export function SuccessStories() {
       className="relative overflow-hidden bg-gradient-to-b from-primary/[0.07] to-white py-14 dark:from-primary/10 dark:to-background md:py-16"
     >
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-10 text-center">
-          <p className="mb-2 text-sm font-semibold text-primary">Results</p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Success Stories
-          </h2>
+        <div className="mb-8 text-center sm:mb-10">
+          <p className="eyebrow">Results</p>
+          <h2 className="section-title text-foreground">Success Stories</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
             Your Success, Our Pride! See how our students achieved their government job dreams.
           </p>

@@ -20,26 +20,24 @@ const avatarColors = [
 
 export function ExpertTeam() {
   return (
-    <section id="expert-team" className="bg-white py-14 dark:bg-background md:py-16">
+    <section id="expert-team" className="bg-white py-12 dark:bg-background md:py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-10 text-center">
-          <p className="mb-2 text-sm font-semibold text-primary">Faculty</p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Our Expert Team
-          </h2>
+        <div className="mb-8 text-center sm:mb-10">
+          <p className="eyebrow">Faculty</p>
+          <h2 className="section-title text-foreground">Our Expert Team</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
             Meet the passionate professionals dedicated to your learning success
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {expertTeam.map((member, index) => (
             <article
               key={member.id}
-              className="flex flex-col items-center rounded-2xl bg-white px-5 py-7 text-center shadow-[0_8px_30px_rgba(30,58,95,0.08)] transition hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,58,95,0.12)] dark:bg-card dark:shadow-none dark:ring-1 dark:ring-border"
+              className="flex flex-col items-center rounded-2xl bg-white px-3 py-5 text-center shadow-[0_8px_30px_rgba(30,58,95,0.08)] transition hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,58,95,0.12)] dark:bg-card dark:shadow-none dark:ring-1 dark:ring-border sm:px-5 sm:py-7"
             >
               {member.image ? (
-                <div className="relative mb-4 size-24 overflow-hidden rounded-full ring-2 ring-slate-100 dark:ring-border">
+                <div className="relative mb-3 size-20 overflow-hidden rounded-full ring-2 ring-slate-100 dark:ring-border sm:mb-4 sm:size-24">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -50,21 +48,21 @@ export function ExpertTeam() {
                 </div>
               ) : (
                 <div
-                  className={`mb-4 flex size-24 items-center justify-center rounded-full bg-gradient-to-br text-2xl font-bold ring-2 ring-slate-100 dark:ring-border ${avatarColors[index % avatarColors.length]}`}
+                  className={`mb-3 flex size-20 items-center justify-center rounded-full bg-gradient-to-br text-xl font-bold ring-2 ring-slate-100 dark:ring-border sm:mb-4 sm:size-24 sm:text-2xl ${avatarColors[index % avatarColors.length]}`}
                   aria-hidden
                 >
                   {initials(member.name)}
                 </div>
               )}
-              <h3 className="mb-3 text-base font-bold leading-snug text-slate-900 dark:text-foreground">
+              <h3 className="mb-2 text-sm font-bold leading-snug text-slate-900 dark:text-foreground sm:mb-3 sm:text-base">
                 {member.name}
               </h3>
-              <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
+              <div className="mb-1 inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 sm:mb-2 sm:px-3 sm:py-1.5 sm:text-xs">
                 <GraduationCap className="size-3.5" />
                 {member.role}
               </div>
               {member.detail && (
-                <p className="mt-1 text-sm font-medium text-slate-700 dark:text-muted-foreground">
+                <p className="mt-1 text-xs font-medium text-slate-700 dark:text-muted-foreground sm:text-sm">
                   {member.detail}
                 </p>
               )}

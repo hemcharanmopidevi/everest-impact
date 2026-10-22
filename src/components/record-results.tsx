@@ -7,25 +7,23 @@ const avatarColors = ["#12a679", "#e0446b", "#7a4be0", "#1a5fe0", "#e07a10", "#0
 
 export function RecordResults() {
   return (
-    <section id="record-results" className="relative overflow-hidden bg-[#0b1530] py-16 text-white md:py-24">
+    <section id="record-results" className="relative overflow-hidden bg-[#0b1530] py-12 text-white sm:py-16 md:py-24">
       <div className="orb right-[-120px] top-[-60px] size-[360px] bg-[#1a5fe0]/60" />
       <div className="reveal relative mx-auto max-w-6xl px-4">
         <p className="mb-1 text-sm font-bold tracking-wide text-[#ffb347]">Results</p>
-        <h2 className="mb-3 text-3xl font-extrabold tracking-tight md:text-4xl">
-          Record Breaking Results Every Year
-        </h2>
-        <p className="mb-10 max-w-2xl text-[#c5d1f0]">
+        <h2 className="section-title mb-3">Record Breaking Results Every Year</h2>
+        <p className="mb-8 max-w-2xl text-sm text-[#c5d1f0] sm:mb-10 sm:text-base">
           Real students, real ranks. These aspirants trained with EVERESTIMPACT and topped their exams.
         </p>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {recordResults.map((result, i) => (
             <article
               key={result.id}
-              className="flex min-h-[190px] items-end justify-between gap-4 rounded-[22px] border border-white/15 bg-white/[0.06] p-6 transition duration-300 hover:-translate-y-2 hover:bg-white/10"
+              className="flex min-h-[150px] items-end justify-between gap-4 rounded-[20px] border border-white/15 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-2 hover:bg-white/10 sm:min-h-[190px] sm:rounded-[22px] sm:p-6"
             >
               <div>
                 <p
-                  className="text-6xl font-extrabold leading-none"
+                  className="text-5xl font-extrabold leading-none sm:text-6xl"
                   style={{ color: rankColors[i % rankColors.length] }}
                 >
                   {result.rank}
@@ -48,7 +46,7 @@ export function RecordResults() {
                 )}
               </div>
               <div
-                className="flex size-20 shrink-0 items-center justify-center rounded-[20px] text-2xl font-extrabold shadow-[0_8px_0_rgba(0,0,0,0.25)]"
+                className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold shadow-[0_6px_0_rgba(0,0,0,0.25)] sm:size-20 sm:rounded-[20px] sm:text-2xl sm:shadow-[0_8px_0_rgba(0,0,0,0.25)]"
                 style={{ background: avatarColors[i % avatarColors.length] }}
                 aria-hidden
               >

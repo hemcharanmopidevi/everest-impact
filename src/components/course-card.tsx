@@ -4,23 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Heart } from "lucide-react";
 import type { Course } from "@/data/site";
-import { discountPercent, formatINR } from "@/lib/utils";
+import { cn, discountPercent, formatINR } from "@/lib/utils";
 import { useWishlist } from "@/hooks/use-wishlist";
 
-export function CourseCard({ course }: { course: Course }) {
+type Props = { course: Course; className?: string };
+
+export function CourseCard({ course, className }: Props) {
   const { has, toggle } = useWishlist();
   const off = discountPercent(course.price, course.mrp);
   const saved = has(course.id);
 
   return (
-    <article className="tilt-card flex w-[260px] shrink-0 flex-col overflow-hidden rounded-[22px] bg-card shadow-[0_14px_40px_rgba(26,47,106,0.12)] ring-1 ring-border/60 hover:shadow-[0_24px_50px_rgba(26,47,106,0.2)] sm:w-[280px]">
+    <article
+      className={cn(
+        "tilt-card flex w-[250px] shrink-0 flex-col overflow-hidden rounded-[22px] bg-card shadow-[0_14px_40px_rgba(26,47,106,0.12)] ring-1 ring-border/60 hover:shadow-[0_24px_50px_rgba(26,47,106,0.2)] sm:w-[280px]",
+        className
+      )}
+    >
       <div className="relative aspect-[16/10] bg-muted">
         <Image
           src={course.image}
           alt={course.title}
           fill
           className="object-cover"
-          sizes="280px"
+          sizes="(max-width: 640px) 100vw, 280px"
         />
         <button
           type="button"
@@ -40,16 +47,16 @@ export function CourseCard({ course }: { course: Course }) {
         <h3 className="line-clamp-2 min-h-[2.75rem] text-sm font-bold leading-snug text-[#26335a] dark:text-foreground">
           {course.title}
         </h3>
+        {course.mrp > course.price && (
+          <span className="inline-flex w-fit rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+            You save {formatINR(course.mrp - course.price)}
+          </span>
+        )}
         <div className="mt-auto flex items-end justify-between gap-2">
-          <div>
+          <div className="min-w-0">
             <p className="text-xl font-extrabold text-foreground">{formatINR(course.price)}</p>
             {course.mrp > course.price && (
-              <p className="text-xs text-muted-foreground">
-                <span className="line-through">{formatINR(course.mrp)}</span>
-                <span className="ml-1.5 font-semibold text-emerald-600">
-                  Save {formatINR(course.mrp - course.price)}
-                </span>
-              </p>
+              <p className="text-xs text-muted-foreground line-through">{formatINR(course.mrp)}</p>
             )}
           </div>
           <Link
