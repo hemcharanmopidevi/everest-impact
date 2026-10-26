@@ -115,7 +115,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="6s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
             </ellipse>
 
             {/* Oval 2 Dotted Boundary (Center: Software) */}
@@ -130,7 +130,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="300" dur="6s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="300" dur="22s" repeatCount="indefinite" />
             </ellipse>
 
             {/* Oval 3 Dotted Boundary (Right: Marketplace) */}
@@ -145,7 +145,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="6s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
             </ellipse>
 
             {/* ====== 2. CROSSING X TANGENTS BETWEEN OVAL 1 & OVAL 2 ====== */}
@@ -158,7 +158,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="4.5s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
             {/* Bottom-Right of Oval 1 up through (420, 240) to Top-Left of Oval 2 */}
             <path
@@ -169,7 +169,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="4.5s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
 
             {/* ====== 3. CROSSING X TANGENTS BETWEEN OVAL 2 & OVAL 3 ====== */}
@@ -182,7 +182,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="4.5s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
             {/* Bottom-Right of Oval 2 up through (780, 240) to Top-Left of Oval 3 */}
             <path
@@ -193,7 +193,7 @@ export function SuccessPlatform() {
               strokeDasharray="3 12"
               strokeLinecap="round"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="4.5s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
 
             {/* ====== 4. OUTER OVERARCHING AND UNDERARCHING CONCENTRIC SWEEP ====== */}
@@ -218,7 +218,7 @@ export function SuccessPlatform() {
               strokeLinecap="round"
               strokeOpacity="0.8"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="6s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
             </path>
 
             {/* ====== 5. PARALLEL OUTERMOST GUIDELINE ====== */}
@@ -243,7 +243,7 @@ export function SuccessPlatform() {
               strokeLinecap="round"
               strokeOpacity="0.4"
             >
-              <animate attributeName="stroke-dashoffset" from="0" to="240" dur="5s" repeatCount="indefinite" />
+              <animate attributeName="stroke-dashoffset" from="0" to="240" dur="24s" repeatCount="indefinite" />
             </path>
 
             {/* Orbit directional arrows */}

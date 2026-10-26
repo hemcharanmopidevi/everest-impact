@@ -122,7 +122,7 @@ export function WhyChooseEverest() {
   useEffect(() => {
     let animId: number;
     const startTime = performance.now();
-    const duration = 7000; // 7 seconds period — exact Antigravity duration
+    const duration = 12000; // 12 seconds period — calm, smooth wave
     const amplitude = 32; // 32px vertical oscillation amplitude
 
     const animate = (currentTime: number) => {

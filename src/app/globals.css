@@ -306,22 +306,22 @@ body {
 
 .animate-dash-flow,
 .animate-dots-flow {
-  animation: flow-dots-cw 6s linear infinite !important;
+  animation: flow-dots-cw 22s linear infinite !important;
 }
 
 .animate-dash-flow-reverse,
 .animate-dots-flow-reverse {
-  animation: flow-dots-ccw 6s linear infinite !important;
+  animation: flow-dots-ccw 22s linear infinite !important;
 }
 
 .animate-dash-flow-fast,
 .animate-dots-flow-fast {
-  animation: flow-dots-fast 4.5s linear infinite !important;
+  animation: flow-dots-fast 18s linear infinite !important;
 }
 
 .animate-dash-flow-slow,
 .animate-dots-flow-slow {
-  animation: flow-dots-cw 9s linear infinite !important;
+  animation: flow-dots-cw 28s linear infinite !important;
 }
 
 /* ─── Glow indicator dot ─── */
