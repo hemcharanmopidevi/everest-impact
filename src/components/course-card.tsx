@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart } from "lucide-react";
+import { Clock, Heart, PlayCircle } from "lucide-react";
 import type { Course } from "@/data/site";
 import { cn, discountPercent, formatINR } from "@/lib/utils";
 import { useWishlist } from "@/hooks/use-wishlist";
 
-type Props = { course: Course; className?: string };
-
-export function CourseCard({ course, className }: Props) {
+export function CourseCard({ course, className }: { course: Course; className?: string }) {
   const { has, toggle } = useWishlist();
   const off = discountPercent(course.price, course.mrp);
   const saved = has(course.id);
@@ -17,54 +15,80 @@ export function CourseCard({ course, className }: Props) {
   return (
     <article
       className={cn(
-        "tilt-card flex w-[250px] shrink-0 flex-col overflow-hidden rounded-[22px] bg-card shadow-[0_14px_40px_rgba(26,47,106,0.12)] ring-1 ring-border/60 hover:shadow-[0_24px_50px_rgba(26,47,106,0.2)] sm:w-[280px]",
-        className
+        "group flex flex-col overflow-hidden rounded-2xl glass-card card-hover gradient-border",
+        className || "w-[280px] shrink-0 sm:w-[300px]"
       )}
     >
-      <div className="relative aspect-[16/10] bg-muted">
+      {/* Image */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-muted">
         <Image
           src={course.image}
           alt={course.title}
           fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, 280px"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          sizes="300px"
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        {/* Wishlist button */}
         <button
           type="button"
           aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
           onClick={() => toggle(course.id)}
-          className="absolute right-2.5 top-2.5 inline-flex size-9 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur transition hover:bg-black/60"
+          className="absolute right-3 top-3 z-10 inline-flex size-10 items-center justify-center rounded-xl bg-black/30 text-white backdrop-blur-md ring-1 ring-white/20 transition-all duration-300 hover:bg-black/50 hover:scale-110"
         >
-          <Heart className={saved ? "size-4 fill-red-500 text-red-500" : "size-4"} />
+          <Heart className={saved ? "size-4 fill-red-400 text-red-400" : "size-4"} />
         </button>
+
+        {/* Discount badge */}
         {off > 0 && (
-          <span className="absolute left-3 top-3 rounded-full bg-[#ff8a1f] px-3 py-1 text-xs font-extrabold text-[#0b1530] shadow">
-            {off}% off
+          <span className="absolute left-3 top-3 z-10 rounded-lg bg-gradient-to-r from-sky-500 to-sky-600 px-2.5 py-1 text-[11px] font-bold text-white shadow-lg shadow-sky-500/30">
+            {off}% OFF
           </span>
         )}
+
+        {/* Play preview on hover */}
+        <div className="absolute inset-0 z-[5] flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="flex size-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-md ring-1 ring-white/30">
+            <PlayCircle className="size-7 text-white" />
+          </div>
+        </div>
       </div>
+
+      {/* Content */}
       <div className="flex flex-1 flex-col gap-3 p-4">
-        <h3 className="line-clamp-2 min-h-[2.75rem] text-sm font-bold leading-snug text-[#26335a] dark:text-foreground">
+        {/* Category & validity */}
+        <div className="flex items-center gap-2">
+          <span className="rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
+            {course.exam}
+          </span>
+          <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+            <Clock className="size-3" />
+            {course.validity} {course.validityType.toLowerCase()}
+          </span>
+        </div>
+
+        <h3 className="line-clamp-2 min-h-[2.75rem] text-sm font-bold leading-snug">
           {course.title}
         </h3>
-        {course.mrp > course.price && (
-          <span className="inline-flex w-fit rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-            You save {formatINR(course.mrp - course.price)}
-          </span>
-        )}
+
         <div className="mt-auto flex items-end justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-xl font-extrabold text-foreground">{formatINR(course.price)}</p>
+          <div>
+            <p className="text-xl font-extrabold tracking-tight text-foreground">
+              {formatINR(course.price)}
+            </p>
             {course.mrp > course.price && (
-              <p className="text-xs text-muted-foreground line-through">{formatINR(course.mrp)}</p>
+              <p className="text-xs text-muted-foreground line-through">
+                {formatINR(course.mrp)}
+              </p>
             )}
           </div>
           <Link
             href={`/courses/${course.slug}`}
-            className="inline-flex items-center gap-1 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-primary-foreground shadow-[0_5px_0_#0f3fa8] transition-transform hover:-translate-y-0.5"
+            className="btn-premium rounded-xl px-4 py-2.5 text-xs font-semibold"
           >
             Explore
-            <ArrowRight className="size-3.5" />
           </Link>
         </div>
       </div>

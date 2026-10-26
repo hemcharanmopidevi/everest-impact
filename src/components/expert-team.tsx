@@ -1,72 +1,78 @@
 import Image from "next/image";
-import { GraduationCap } from "lucide-react";
-import { expertTeam } from "@/data/site";
-
-function initials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("");
-}
-
-const avatarColors = [
-  "from-amber-100 to-orange-200 text-amber-900",
-  "from-sky-100 to-blue-200 text-slate-800",
-  "from-violet-100 to-indigo-200 text-slate-800",
-  "from-emerald-100 to-teal-200 text-slate-800",
-];
+import { Award, GraduationCap } from "lucide-react";
+import { facultyMembers } from "@/data/site";
 
 export function ExpertTeam() {
   return (
-    <section id="expert-team" className="bg-white py-12 dark:bg-background md:py-16">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-8 text-center sm:mb-10">
-          <p className="eyebrow">Faculty</p>
-          <h2 className="section-title text-foreground">Our Expert Team</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-            Meet the passionate professionals dedicated to your learning success
+    <section id="faculty" className="relative overflow-hidden py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/10">
+      <div className="relative mx-auto max-w-7xl px-4">
+        <div className="text-center mb-14">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
+            <GraduationCap className="size-3.5" />
+            <span>Legendary Mentorship</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            Learn From <span className="gradient-text">Experienced Faculty</span>
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+            Learn directly from South India&apos;s most celebrated SSC educators, Guinness World Record holders, and subject directors.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {expertTeam.map((member, index) => (
-            <article
-              key={member.id}
-              className="flex flex-col items-center rounded-2xl bg-white px-3 py-5 text-center shadow-[0_8px_30px_rgba(30,58,95,0.08)] transition hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(30,58,95,0.12)] dark:bg-card dark:shadow-none dark:ring-1 dark:ring-border sm:px-5 sm:py-7"
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {facultyMembers.map((member) => (
+            <div
+              key={member.name}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl glass-card card-hover gradient-border transition-all duration-300"
             >
-              {member.image ? (
-                <div className="relative mb-3 size-20 overflow-hidden rounded-full ring-2 ring-slate-100 dark:ring-border sm:mb-4 sm:size-24">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-[center_18%]"
-                    sizes="96px"
-                  />
+              {/* Card top banner backdrop */}
+              <div className="h-28 w-full bg-gradient-to-br from-sky-500/20 via-sky-400/10 to-transparent border-b border-border/30 relative" />
+
+              {/* Circular Portrait Avatar overlapping banner */}
+              <div className="relative -mt-16 flex justify-center">
+                <div className="relative size-32 sm:size-36 rounded-full p-1 bg-gradient-to-tr from-black via-sky-600 to-sky-400 shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-all duration-500">
+                  <div className="relative size-full rounded-full overflow-hidden bg-slate-100 ring-4 ring-card">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 640px) 128px, 144px"
+                    />
+                  </div>
                 </div>
-              ) : (
-                <div
-                  className={`mb-3 flex size-20 items-center justify-center rounded-full bg-gradient-to-br text-xl font-bold ring-2 ring-slate-100 dark:ring-border sm:mb-4 sm:size-24 sm:text-2xl ${avatarColors[index % avatarColors.length]}`}
-                  aria-hidden
-                >
-                  {initials(member.name)}
-                </div>
-              )}
-              <h3 className="mb-2 text-sm font-bold leading-snug text-slate-900 dark:text-foreground sm:mb-3 sm:text-base">
-                {member.name}
-              </h3>
-              <div className="mb-1 inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-800 dark:bg-amber-950/40 dark:text-amber-200 sm:mb-2 sm:px-3 sm:py-1.5 sm:text-xs">
-                <GraduationCap className="size-3.5" />
-                {member.role}
               </div>
-              {member.detail && (
-                <p className="mt-1 text-xs font-medium text-slate-700 dark:text-muted-foreground sm:text-sm">
-                  {member.detail}
-                </p>
-              )}
-            </article>
+
+              {/* Badge */}
+              <div className="mt-3.5 flex justify-center px-4">
+                <span className="inline-flex items-center text-center rounded-full bg-gradient-to-r from-sky-500 to-sky-600 px-3 py-1 text-[11px] font-bold tracking-wide text-white shadow-md shadow-sky-500/25">
+                  {member.badge}
+                </span>
+              </div>
+
+              {/* Bio & Details */}
+              <div className="flex flex-1 flex-col justify-between p-6 pt-3 text-center">
+                <div>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-foreground group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 text-xs font-bold text-primary">
+                    {member.role}
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground font-semibold">
+                    {member.experience}
+                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground italic line-clamp-3">
+                    {member.quote}
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-center gap-1.5 border-t border-border/60 pt-3 text-[11px] font-bold text-primary">
+                  <Award className="size-3.5 text-amber-500" />
+                  <span>Unmatched Track Record</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

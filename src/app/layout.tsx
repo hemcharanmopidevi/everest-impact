@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { AppDownloadBar } from "@/components/app-download-bar";
 import { SupportFab } from "@/components/support-fab";
 import { ThemeProvider } from "@/components/theme-provider";
-import { brand } from "@/data/site";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -15,11 +13,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: brand.name,
+  title: "Everest Coaching Point — SSC CGL/CHSL 2027 · August 2026 Live Batch",
   description:
-    "Best Institute for SSC CGL in Hyderabad. Live courses, recorded batches, and test series.",
+    "Dilsukhnagar, Hyderabad · Since 2015. Complete Preparation from Basics to Advanced. Online & Offline, 1200+ Teaching Hours, Guinness Record Holder Faculty, 18 Own Published Books, 2000+ Selections.",
   icons: {
-    icon: brand.logo,
+    icon: "/favicon.ico",
   },
 };
 
@@ -36,7 +34,6 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-            <AppDownloadBar />
             <SupportFab />
           </div>
         </ThemeProvider>

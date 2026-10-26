@@ -1,58 +1,113 @@
-import Link from "next/link";
-import { PlayCircle } from "lucide-react";
-import { recordResults } from "@/data/site";
+"use client";
 
-const rankColors = ["#ffb347", "#ff7a8a", "#7fb0ff", "#7fe0b8"];
-const avatarColors = ["#12a679", "#e0446b", "#7a4be0", "#1a5fe0", "#e07a10", "#0fa3c9"];
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Trophy } from "lucide-react";
+import { useState, useEffect } from "react";
+import { resultPosters } from "@/data/site";
 
 export function RecordResults() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % resultPosters.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section id="record-results" className="relative overflow-hidden bg-[#0b1530] py-12 text-white sm:py-16 md:py-24">
-      <div className="orb right-[-120px] top-[-60px] size-[360px] bg-[#1a5fe0]/60" />
-      <div className="reveal relative mx-auto max-w-6xl px-4">
-        <p className="mb-1 text-sm font-bold tracking-wide text-[#ffb347]">Results</p>
-        <h2 className="section-title mb-3">Record Breaking Results Every Year</h2>
-        <p className="mb-8 max-w-2xl text-sm text-[#c5d1f0] sm:mb-10 sm:text-base">
-          Real students, real ranks. These aspirants trained with EVERESTIMPACT and topped their exams.
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-          {recordResults.map((result, i) => (
-            <article
-              key={result.id}
-              className="flex min-h-[150px] items-end justify-between gap-4 rounded-[20px] border border-white/15 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-2 hover:bg-white/10 sm:min-h-[190px] sm:rounded-[22px] sm:p-6"
+    <section id="results" className="relative overflow-hidden py-16 md:py-24">
+      {/* Background ambient lighting */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-emerald-500/5 blur-[140px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4">
+        <div className="text-center mb-12">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+            <Trophy className="size-3.5" />
+            <span>Proven Track Record</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            Student Success Is Our <span className="gradient-text">Biggest Achievement</span>
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+            More than 10% of SSC CGL final selections in the Southern Region are from Everest Coaching Point — 2000+ final selections since 2015. Official result posters:
+          </p>
+        </div>
+
+        {/* Carousel Showcase */}
+        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl glass-card gradient-border p-3 shadow-2xl">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black">
+            <Image
+              src={resultPosters[current].image}
+              alt={resultPosters[current].title}
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+            {/* Title overlay */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6">
+              <span className="rounded-md bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                Official Result Poster
+              </span>
+              <h3 className="mt-1 text-lg font-bold text-white">
+                {resultPosters[current].title}
+              </h3>
+              <p className="text-xs text-slate-300">
+                {resultPosters[current].desc}
+              </p>
+            </div>
+          </div>
+
+          {/* Navigation Controls */}
+          <button
+            type="button"
+            aria-label="Previous Poster"
+            onClick={() => setCurrent((c) => (c - 1 + resultPosters.length) % resultPosters.length)}
+            className="absolute left-6 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
+          <button
+            type="button"
+            aria-label="Next Poster"
+            onClick={() => setCurrent((c) => (c + 1) % resultPosters.length)}
+            className="absolute right-6 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110"
+          >
+            <ChevronRight className="size-5" />
+          </button>
+
+          {/* Indicators */}
+          <div className="mt-3 flex items-center justify-center gap-2 pb-1">
+            {resultPosters.map((poster, idx) => (
+              <button
+                key={poster.title}
+                type="button"
+                aria-label={`Go to ${poster.title}`}
+                onClick={() => setCurrent(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  current === idx ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Thumbnail Strip */}
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {resultPosters.map((poster, idx) => (
+            <button
+              key={poster.title}
+              type="button"
+              onClick={() => setCurrent(idx)}
+              className={`rounded-xl border px-3 py-2 text-xs font-semibold transition-all ${
+                current === idx
+                  ? "border-primary bg-primary/10 text-primary"
+                  : "border-border bg-card text-muted-foreground hover:bg-accent"
+              }`}
             >
-              <div>
-                <p
-                  className="text-5xl font-extrabold leading-none sm:text-6xl"
-                  style={{ color: rankColors[i % rankColors.length] }}
-                >
-                  {result.rank}
-                  <small className="mt-1 block text-xs font-bold tracking-[0.2em] text-[#c5d1f0]">
-                    AIR
-                  </small>
-                </p>
-                <span className="mt-4 inline-block rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-bold">
-                  {result.exam} {result.year}
-                </span>
-                <p className="mt-3 font-bold">{result.name}</p>
-                {result.interview && (
-                  <Link
-                    href={result.interview}
-                    className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-[#ffd27a] hover:underline"
-                  >
-                    <PlayCircle className="size-3.5" />
-                    Watch Interview
-                  </Link>
-                )}
-              </div>
-              <div
-                className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-extrabold shadow-[0_6px_0_rgba(0,0,0,0.25)] sm:size-20 sm:rounded-[20px] sm:text-2xl sm:shadow-[0_8px_0_rgba(0,0,0,0.25)]"
-                style={{ background: avatarColors[i % avatarColors.length] }}
-                aria-hidden
-              >
-                {result.initials}
-              </div>
-            </article>
+              {poster.title}
+            </button>
           ))}
         </div>
       </div>
