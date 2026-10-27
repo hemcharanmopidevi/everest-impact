@@ -61,19 +61,8 @@ export function SuccessPlatform() {
   return (
     <section
       id="ecosystem"
-      className="relative overflow-hidden py-14 md:py-20 border-b border-border/40 bg-[#faf8fa] dark:bg-background"
+      className="relative overflow-hidden py-14 md:py-20 border-b border-border/40 bg-white dark:bg-background"
     >
-      {/* Faint World Map Watermark in Background — Exact match to reference image */}
-      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.14] dark:opacity-[0.05]">
-        <Image
-          src="/images/world-map.svg"
-          alt="World Map Background"
-          width={1300}
-          height={500}
-          className="w-full h-full object-contain"
-        />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-4 z-10">
         
         {/* Section Header matching 'Coach Success Platform' reference */}
