@@ -16,27 +16,27 @@ export function RecordResults() {
   }, []);
 
   return (
-    <section id="results" className="relative overflow-hidden py-16 md:py-24">
+    <section id="results" className="relative overflow-hidden py-12 sm:py-16 md:py-24">
       {/* Background ambient lighting */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-emerald-500/5 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <Trophy className="size-3.5" />
             <span>Proven Track Record</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Student Success Is Our <span className="gradient-text">Biggest Achievement</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             More than 10% of SSC CGL final selections in the Southern Region are from Everest Coaching Point — 2000+ final selections since 2015. Official result posters:
           </p>
         </div>
 
         {/* Carousel Showcase */}
-        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl glass-card gradient-border p-3 shadow-2xl">
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black">
+        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl sm:rounded-3xl glass-card gradient-border p-2 sm:p-3 shadow-2xl">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-black">
             <Image
               src={resultPosters[current].image}
               alt={resultPosters[current].title}
@@ -46,14 +46,14 @@ export function RecordResults() {
               sizes="(max-width: 768px) 100vw, 768px"
             />
             {/* Title overlay */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6">
-              <span className="rounded-md bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent p-3 sm:p-6">
+              <span className="rounded-md bg-emerald-500 px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white">
                 Official Result Poster
               </span>
-              <h3 className="mt-1 text-lg font-bold text-white">
+              <h3 className="mt-1 text-sm sm:text-base md:text-lg font-bold text-white line-clamp-1">
                 {resultPosters[current].title}
               </h3>
-              <p className="text-xs text-slate-300">
+              <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-1">
                 {resultPosters[current].desc}
               </p>
             </div>
@@ -64,17 +64,17 @@ export function RecordResults() {
             type="button"
             aria-label="Previous Poster"
             onClick={() => setCurrent((c) => (c - 1 + resultPosters.length) % resultPosters.length)}
-            className="absolute left-6 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110"
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 flex size-8 sm:size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110 active:scale-95"
           >
-            <ChevronLeft className="size-5" />
+            <ChevronLeft className="size-4 sm:size-5" />
           </button>
           <button
             type="button"
             aria-label="Next Poster"
             onClick={() => setCurrent((c) => (c + 1) % resultPosters.length)}
-            className="absolute right-6 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110"
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 flex size-8 sm:size-10 items-center justify-center rounded-xl bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110 active:scale-95"
           >
-            <ChevronRight className="size-5" />
+            <ChevronRight className="size-4 sm:size-5" />
           </button>
 
           {/* Indicators */}

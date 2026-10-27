@@ -3,18 +3,18 @@ import { coreSubjects } from "@/data/site";
 
 export function ValueProposition() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/20">
+    <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/20">
       <div className="relative mx-auto max-w-7xl px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <Sparkles className="size-3.5" />
             <span>Syllabus Architecture</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             One Course · <span className="gradient-text">Four Core Subjects</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             SSC CGL / CHSL / MTS · Tier-I 2027 · Comprehensive coverage in 5–6 months · 1200+ hours of dedicated teaching from absolute zero to advanced.
           </p>
         </div>
@@ -24,7 +24,7 @@ export function ValueProposition() {
           {coreSubjects.map((sub) => (
             <div
               key={sub.name}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl glass-card p-6 card-hover gradient-border"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl glass-card p-5 sm:p-6 card-hover gradient-border"
             >
               <div>
                 <div className="mb-4 flex items-center justify-between">

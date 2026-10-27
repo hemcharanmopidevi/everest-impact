@@ -59,17 +59,17 @@ function StatItem({ stat, index }: { stat: (typeof heroStats)[number]; index: nu
   return (
     <div
       ref={ref}
-      className="glass-card group relative flex flex-col items-center gap-3 rounded-2xl p-6 text-center card-hover md:p-8"
+      className="glass-card group relative flex flex-col items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center card-hover md:p-8"
     >
-      <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 transition-all duration-500 group-hover:from-primary/25 group-hover:to-primary/10 group-hover:scale-110">
-        <Icon className="size-6 text-primary" />
+      <div className="flex size-11 sm:size-14 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 transition-all duration-500 group-hover:from-primary/25 group-hover:to-primary/10 group-hover:scale-110">
+        <Icon className="size-5 sm:size-6 text-primary" />
       </div>
-      <p className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+      <p className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
         {count.toLocaleString("en-IN")}
         <span className="gradient-text">{stat.suffix}</span>
       </p>
-      <p className="text-sm font-bold text-foreground">{stat.label}</p>
-      <p className="text-xs text-muted-foreground">{stat.desc}</p>
+      <p className="text-xs sm:text-sm font-bold text-foreground">{stat.label}</p>
+      <p className="text-[11px] sm:text-xs text-muted-foreground">{stat.desc}</p>
     </div>
   );
 }

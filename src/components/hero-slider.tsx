@@ -33,32 +33,32 @@ export function HeroSlider() {
                 <span>EVEREST COACHING POINT · HYDERABAD</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-[4.25rem] font-black tracking-tight leading-[1.08] text-[#0f172a]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.25rem] font-black tracking-tight leading-[1.08] text-[#0f172a] dark:text-white">
                 Rankers Thrive <br />
                 <span className="bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 bg-clip-text text-transparent">
                   Here
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-md text-base sm:text-lg text-slate-700/90 leading-relaxed font-normal">
+              <p className="mt-4 sm:mt-5 max-w-md text-sm sm:text-base lg:text-lg text-slate-700/90 dark:text-slate-300 leading-relaxed font-normal">
                 Join South India&apos;s premier institute uniting 1,200+ hours of elite coaching,
                 Guinness World Record mentors, and 18 published books to build and sustain your
                 SSC CGL &amp; CHSL career.
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-3.5 sm:mt-9">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
                 <a
                   href="https://wa.me/919030030185?text=Hello%20Everest%20Coaching%20Point,%20I%20want%20to%20join%20the%20August%202026%20Live%20Batch."
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full btn-premium px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full btn-premium px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   Join Our Global Community
                 </a>
 
                 <a
                   href="#fees"
-                  className="inline-flex items-center justify-center rounded-full bg-white/95 text-slate-800 border border-slate-300/80 px-6 py-4 text-sm font-bold shadow-sm transition-all hover:bg-slate-50 hover:border-slate-400 active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full bg-white/95 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300/80 dark:border-slate-700 px-6 py-3.5 sm:py-4 text-sm font-bold shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-[0.98] text-center"
                 >
                   View Batches &amp; Fees
                 </a>
@@ -66,22 +66,38 @@ export function HeroSlider() {
             </div>
 
             {/* Right Column: Center Character, Floating Badges & Mentor Live Video Grid */}
-            <div className="relative lg:col-span-7 xl:col-span-7 flex items-center justify-center min-h-[460px] lg:min-h-[520px]">
+            <div className="relative lg:col-span-7 xl:col-span-7 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[400px] md:min-h-[460px] lg:min-h-[520px]">
               
               {/* Center Character */}
-              <div className="relative z-10 w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/15 border border-white/60">
+              <div className="relative z-10 w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/15 border border-white/60">
                 <Image
                   src="/images/coach_hero.jpg"
                   alt="Everest Coaching Point Mentorship"
                   fill
                   className="object-cover object-top"
                   priority
-                  sizes="(max-width: 768px) 100vw, 420px"
+                  sizes="(max-width: 640px) 280px, (max-width: 768px) 340px, 420px"
                 />
               </div>
 
-              {/* Widget 1: Circular Goals / Selections Completed Badge (Top Left of Character) */}
-              <div className="absolute left-0 sm:left-4 lg:-left-6 top-4 sm:top-8 z-20 flex flex-col items-center justify-center rounded-full bg-white/95 backdrop-blur-md p-4 sm:p-5 shadow-xl border border-slate-100 animate-fade-in">
+              {/* Mobile-only highlights pills strip underneath character (< md) */}
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 md:hidden z-10 w-full px-2">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 dark:bg-sky-950/60 border border-sky-200/80 dark:border-sky-800/80 px-3 py-1 text-xs font-semibold text-sky-700 dark:text-sky-300 shadow-xs">
+                  <Users className="size-3 text-sky-500" />
+                  <span>2,000+ Selections</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200/80 dark:border-amber-800/80 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-300 shadow-xs">
+                  <Award className="size-3 text-amber-500" />
+                  <span>Guinness Record Mentors</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/80 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300 shadow-xs">
+                  <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Daily Live Mentorship</span>
+                </div>
+              </div>
+
+              {/* Widget 1: Circular Goals / Selections Completed Badge (Top Left of Character) - visible on md+ */}
+              <div className="hidden md:flex absolute left-0 sm:left-4 lg:-left-6 top-4 sm:top-8 z-20 flex-col items-center justify-center rounded-full bg-white/95 backdrop-blur-md p-4 sm:p-5 shadow-xl border border-slate-100 animate-fade-in">
                 <div className="relative flex size-24 sm:size-28 flex-col items-center justify-center rounded-full border-[3px] border-slate-200 border-t-sky-500 border-r-sky-400 bg-white shadow-inner">
                   <Users className="size-3.5 text-sky-500 mb-0.5" />
                   <span className="text-base sm:text-lg font-black text-[#0f172a] tracking-tight">2,000+</span>
@@ -92,7 +108,7 @@ export function HeroSlider() {
               </div>
 
               {/* Widget 2: Marketplace / Faculty Mentors Card (Bottom Left of Character, Overlapping) */}
-              <div className="absolute left-2 sm:left-6 lg:left-0 bottom-2 sm:bottom-6 z-20 w-[240px] sm:w-[270px] rounded-2xl bg-[#0a1128]/90 backdrop-blur-xl p-4 text-white shadow-2xl border border-white/15 animate-fade-in">
+              <div className="hidden md:block absolute left-2 sm:left-6 lg:left-0 bottom-2 sm:bottom-6 z-20 w-[240px] sm:w-[270px] rounded-2xl bg-[#0a1128]/90 backdrop-blur-xl p-4 text-white shadow-2xl border border-white/15 animate-fade-in">
                 <div className="flex flex-col">
                   <span className="text-sm font-bold text-white tracking-wide">Faculty Mentors</span>
                   <span className="text-[11px] font-medium text-sky-300 mb-3">
@@ -144,7 +160,7 @@ export function HeroSlider() {
               </div>
 
               {/* Widget 3: Live Video Grid with 6 Mentor Faces (Right of Character) */}
-              <div className="absolute right-0 sm:right-2 lg:-right-4 top-1/2 -translate-y-1/2 z-20 flex flex-col rounded-2xl bg-white/70 backdrop-blur-md p-3 sm:p-4 shadow-xl border border-white/80">
+              <div className="hidden lg:flex absolute right-0 sm:right-2 lg:-right-4 top-1/2 -translate-y-1/2 z-20 flex-col rounded-2xl bg-white/70 backdrop-blur-md p-3 sm:p-4 shadow-xl border border-white/80">
                 {/* Header: LIVE Badge + Coaching Mastery Session */}
                 <div className="mb-3 flex items-center gap-2">
                   <span className="inline-flex items-center rounded-full bg-sky-500 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-white shadow-sm">

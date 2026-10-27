@@ -61,10 +61,10 @@ export function Footer() {
       {/* Floating orb */}
       <div className="absolute right-[-10%] top-[10%] h-64 w-64 rounded-full bg-red-600/10 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-10 sm:pt-16">
+        <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand column */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="mb-4 inline-block rounded-xl bg-white px-3.5 py-2 shadow-md">
               <Image
                 src={brand.logo}

@@ -8,9 +8,9 @@ export function SupportFab() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="w-72 overflow-hidden rounded-2xl glass-card shadow-2xl animate-fade-in">
+        <div className="w-[calc(100vw-2rem)] max-w-72 overflow-hidden rounded-2xl glass-card shadow-2xl animate-fade-in">
           {/* Header */}
           <div className="bg-gradient-to-r from-black via-zinc-950 to-sky-950 border-b border-sky-500/20 px-5 py-4">
             <p className="text-sm font-bold text-white">Need help? 👋</p>
@@ -56,7 +56,7 @@ export function SupportFab() {
         aria-label={open ? "Close support menu" : "Open support menu"}
         onClick={() => setOpen((v) => !v)}
         className={cn(
-          "inline-flex size-14 items-center justify-center rounded-full shadow-2xl transition-all duration-500",
+          "inline-flex size-12 sm:size-14 items-center justify-center rounded-full shadow-2xl transition-all duration-500",
           open
             ? "bg-slate-800 text-white rotate-0"
             : "btn-premium pulse-glow rotate-0 hover:rotate-12"

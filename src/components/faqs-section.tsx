@@ -3,26 +3,26 @@ import { faqs } from "@/data/site";
 
 export function FaqsSection() {
   return (
-    <section id="faqs" className="relative overflow-hidden py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/10">
+    <section id="faqs" className="relative overflow-hidden py-12 sm:py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/10">
       <div className="relative mx-auto max-w-4xl px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <HelpCircle className="size-3.5" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
             Clear answers to common questions about admissions, validity, batches, and demo classes.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => (
             <details
               key={faq.q}
-              className="group rounded-2xl glass-card gradient-border p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+              className="group rounded-xl sm:rounded-2xl glass-card gradient-border p-4 sm:p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
               open={idx === 0}
             >
               <summary className="flex cursor-pointer items-center justify-between font-bold text-foreground transition-colors group-open:text-primary">

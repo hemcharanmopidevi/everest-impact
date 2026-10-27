@@ -4,26 +4,26 @@ import { facultyMembers } from "@/data/site";
 
 export function ExpertTeam() {
   return (
-    <section id="faculty" className="relative overflow-hidden py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/10">
+    <section id="faculty" className="relative overflow-hidden py-12 sm:py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-card/30 via-background to-card/10">
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <GraduationCap className="size-3.5" />
             <span>Legendary Mentorship</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Learn From <span className="gradient-text">Experienced Faculty</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             Learn directly from South India&apos;s most celebrated SSC educators, Guinness World Record holders, and subject directors.
           </p>
         </div>
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {facultyMembers.map((member) => (
             <div
               key={member.name}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl glass-card card-hover gradient-border transition-all duration-300"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl glass-card card-hover gradient-border transition-all duration-300"
             >
               {/* Card top banner backdrop */}
               <div className="h-28 w-full bg-gradient-to-br from-sky-500/20 via-sky-400/10 to-transparent border-b border-border/30 relative" />

@@ -14,6 +14,14 @@ export function PublicationsShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [viewMode, setViewMode] = useState<"coverflow" | "grid">("coverflow");
   const [isPlaying, setIsPlaying] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Drag / Swipe handling
   const touchStartX = useRef<number | null>(null);
@@ -187,8 +195,8 @@ export function PublicationsShowcase() {
           <div className="relative">
             {/* The 3D Stage - Clean transparent stage */}
             <div
-              className="relative mx-auto flex h-[420px] w-full max-w-6xl items-center justify-center overflow-hidden py-4 md:h-[520px]"
-              style={{ perspective: "1200px" }}
+              className="relative mx-auto flex h-[340px] sm:h-[420px] md:h-[520px] w-full max-w-6xl items-center justify-center overflow-hidden py-4"
+              style={{ perspective: windowWidth < 640 ? "800px" : "1200px" }}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -204,15 +212,18 @@ export function PublicationsShowcase() {
                 if (offset < -total / 2) offset += total;
 
                 const isCenter = offset === 0;
-                const isVisible = Math.abs(offset) <= 3;
+                const isMobile = windowWidth < 640;
+                const isTablet = windowWidth >= 640 && windowWidth < 1024;
+                const maxVisibleOffset = isMobile ? 1 : isTablet ? 2 : 3;
+                const isVisible = Math.abs(offset) <= maxVisibleOffset;
 
                 if (!isVisible) return null;
 
                 // Responsive positioning calculations
-                // Multipliers for desktop
-                const xOffsetDesktop = offset * 180;
-                const scaleDesktop = isCenter ? 1 : Math.max(0.55, 1 - Math.abs(offset) * 0.16);
-                const rotateYDesktop = offset * -14;
+                const step = isMobile ? 90 : isTablet ? 135 : 180;
+                const xOffset = offset * step;
+                const scale = isCenter ? 1 : Math.max(0.6, 1 - Math.abs(offset) * (isMobile ? 0.2 : 0.16));
+                const rotateY = offset * (isMobile ? -9 : -14);
                 const zIndex = 40 - Math.abs(offset) * 10;
                 const opacity = isCenter ? 1 : Math.max(0.25, 0.9 - Math.abs(offset) * 0.22);
                 const brightness = isCenter ? 1 : Math.max(0.5, 0.9 - Math.abs(offset) * 0.15);
@@ -225,15 +236,15 @@ export function PublicationsShowcase() {
                     tabIndex={0}
                     aria-label={`View ${book.title}`}
                     className={cn(
-                      "absolute top-1/2 left-1/2 cursor-pointer select-none overflow-hidden rounded-[26px] md:rounded-[32px] transition-all duration-500 ease-out will-change-transform",
+                      "absolute top-1/2 left-1/2 cursor-pointer select-none overflow-hidden rounded-[20px] sm:rounded-[26px] md:rounded-[32px] transition-all duration-500 ease-out will-change-transform",
                       isCenter
                         ? "ring-[3px] ring-sky-400 shadow-[0_20px_50px_rgba(14,165,233,0.35)]"
                         : "ring-2 ring-sky-500/40 hover:ring-sky-400"
                     )}
                     style={{
-                      width: "clamp(210px, 32vw, 300px)",
+                      width: isMobile ? "clamp(180px, 56vw, 240px)" : "clamp(210px, 32vw, 300px)",
                       aspectRatio: "3 / 4.3",
-                      transform: `translate(-50%, -50%) translateX(${xOffsetDesktop}px) scale(${scaleDesktop}) rotateY(${rotateYDesktop}deg)`,
+                      transform: `translate(-50%, -50%) translateX(${xOffset}px) scale(${scale}) rotateY(${rotateY}deg)`,
                       zIndex,
                       opacity,
                       filter: `brightness(${brightness})`,
@@ -274,18 +285,18 @@ export function PublicationsShowcase() {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous Book"
-                className="absolute left-2 md:left-4 top-1/2 z-50 flex size-11 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/90 dark:bg-zinc-900/90 text-slate-900 dark:text-white backdrop-blur-md border border-slate-200 dark:border-sky-500/30 transition-all hover:bg-sky-500 hover:text-white hover:border-sky-400 hover:scale-110 active:scale-95 shadow-xl"
+                className="absolute left-1 sm:left-2 md:left-4 top-1/2 z-50 flex size-9 sm:size-11 -translate-y-1/2 items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 dark:bg-zinc-900/90 text-slate-900 dark:text-white backdrop-blur-md border border-slate-200 dark:border-sky-500/30 transition-all hover:bg-sky-500 hover:text-white hover:border-sky-400 hover:scale-110 active:scale-95 shadow-xl"
               >
-                <ChevronLeft className="size-6" />
+                <ChevronLeft className="size-5 sm:size-6" />
               </button>
 
               <button
                 type="button"
                 onClick={handleNext}
                 aria-label="Next Book"
-                className="absolute right-2 md:right-4 top-1/2 z-50 flex size-11 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/90 dark:bg-zinc-900/90 text-slate-900 dark:text-white backdrop-blur-md border border-slate-200 dark:border-sky-500/30 transition-all hover:bg-sky-500 hover:text-white hover:border-sky-400 hover:scale-110 active:scale-95 shadow-xl"
+                className="absolute right-1 sm:right-2 md:right-4 top-1/2 z-50 flex size-9 sm:size-11 -translate-y-1/2 items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 dark:bg-zinc-900/90 text-slate-900 dark:text-white backdrop-blur-md border border-slate-200 dark:border-sky-500/30 transition-all hover:bg-sky-500 hover:text-white hover:border-sky-400 hover:scale-110 active:scale-95 shadow-xl"
               >
-                <ChevronRight className="size-6" />
+                <ChevronRight className="size-5 sm:size-6" />
               </button>
             </div>
 

@@ -544,3 +544,16 @@ html {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
 }
+
+/* ─── Responsive & Fluid Safeguards ─── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 360px) {
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}

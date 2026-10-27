@@ -4,17 +4,17 @@ import { cn } from "@/lib/utils";
 
 export function BatchSchedule() {
   return (
-    <section id="schedule" className="relative overflow-hidden py-16 md:py-24">
+    <section id="schedule" className="relative overflow-hidden py-12 sm:py-16 md:py-24">
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <Calendar className="size-3.5" />
             <span>Admissions Calendar</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Important <span className="gradient-text">Batch Dates</span>
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
             Schedule Last Updated: {batchSchedule.lastUpdated} · Limited Batch Admissions
           </p>
         </div>
@@ -24,7 +24,7 @@ export function BatchSchedule() {
             <div
               key={item.title}
               className={cn(
-                "group relative flex flex-col justify-between rounded-3xl p-6 transition-all duration-300 card-hover",
+                "group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 transition-all duration-300 card-hover",
                 item.highlight
                   ? "glass-card ring-1 ring-primary/40 bg-primary/[0.03]"
                   : "glass-card gradient-border"
@@ -54,8 +54,8 @@ export function BatchSchedule() {
         </div>
 
         {/* Free Demo Callout */}
-        <div className="mt-10 rounded-3xl border border-primary/30 bg-gradient-to-r from-primary/10 via-card to-primary/5 p-6 text-center shadow-lg md:p-8">
-          <h3 className="text-xl font-bold text-foreground">
+        <div className="mt-8 sm:mt-10 rounded-2xl sm:rounded-3xl border border-primary/30 bg-gradient-to-r from-primary/10 via-card to-primary/5 p-5 sm:p-6 md:p-8 text-center shadow-lg">
+          <h3 className="text-lg sm:text-xl font-bold text-foreground">
             Want to experience our teaching first?
           </h3>
           <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">

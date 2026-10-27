@@ -4,17 +4,17 @@ import { cn } from "@/lib/utils";
 
 export function PreparationPlans() {
   return (
-    <section id="fees" className="relative overflow-hidden py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-background via-card/20 to-background">
+    <section id="fees" className="relative overflow-hidden py-12 sm:py-16 md:py-24 border-t border-border/50 bg-gradient-to-b from-background via-card/20 to-background">
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <Sparkles className="size-3.5" />
             <span>Official Fee Structure</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Choose Your <span className="gradient-text">Preparation Plan</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
             Prices are from the institute&apos;s most recent published price list for the <span className="font-bold text-foreground">August-2026 Batch</span>. Please confirm current batch fees at the front office before admission.
           </p>
         </div>
@@ -24,7 +24,7 @@ export function PreparationPlans() {
             <div
               key={plan.id}
               className={cn(
-                "group relative flex flex-col justify-between rounded-3xl p-6 transition-all duration-300 card-hover",
+                "group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 transition-all duration-300 card-hover",
                 plan.isPopular
                   ? "glass-card ring-2 ring-primary shadow-xl shadow-primary/10"
                   : "glass-card gradient-border"

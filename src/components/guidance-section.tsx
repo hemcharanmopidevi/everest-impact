@@ -3,17 +3,17 @@ import { guidanceMantras } from "@/data/site";
 
 export function GuidanceSection() {
   return (
-    <section id="guidance" className="relative overflow-hidden py-16 md:py-24">
+    <section id="guidance" className="relative overflow-hidden py-12 sm:py-16 md:py-24">
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
             <Compass className="size-3.5" />
             <span>Preparation Philosophy</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Before You Begin Your <span className="gradient-text">SSC Journey</span>
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto">
             Points to note before taking admission — from the institute&apos;s own guidance and philosophy.
           </p>
         </div>
@@ -22,7 +22,7 @@ export function GuidanceSection() {
           {guidanceMantras.map((mantra) => (
             <div
               key={mantra.id}
-              className="glass-card group relative flex flex-col justify-between rounded-3xl p-6 card-hover gradient-border"
+              className="glass-card group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-5 sm:p-6 card-hover gradient-border"
             >
               <div>
                 <div className="mb-4 flex items-center justify-between">

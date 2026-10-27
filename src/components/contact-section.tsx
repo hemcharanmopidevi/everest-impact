@@ -13,11 +13,11 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-16 md:py-24 overflow-hidden border-t border-border/50 bg-gradient-to-b from-transparent via-primary/[0.02] to-primary/[0.05]">
+    <section id="contact" className="relative py-12 sm:py-16 md:py-24 overflow-hidden border-t border-border/50 bg-gradient-to-b from-transparent via-primary/[0.02] to-primary/[0.05]">
       {/* Background orb */}
       <div className="absolute left-1/4 bottom-10 h-72 w-72 rounded-full bg-red-600/10 blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl gap-8 lg:gap-12 px-4 lg:grid-cols-2">
         {/* Left: About & Contact Information */}
         <div>
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
@@ -25,7 +25,7 @@ export function ContactSection() {
             <span>Admissions & Counseling</span>
           </div>
 
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
             Your SSC 2027 Preparation <span className="gradient-text">Starts Here</span>
           </h2>
           <p className="text-base font-semibold text-primary">
@@ -95,7 +95,7 @@ export function ContactSection() {
 
         {/* Right: Quick Inquiry Form */}
         <div className="relative">
-          <div className="rounded-3xl glass-card p-8 shadow-xl gradient-border">
+          <div className="rounded-2xl sm:rounded-3xl glass-card p-5 sm:p-8 shadow-xl gradient-border">
             <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
               Request a Call Back
             </h3>

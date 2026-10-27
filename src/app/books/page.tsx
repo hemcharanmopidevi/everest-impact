@@ -57,13 +57,13 @@ export default function BooksPage() {
     <div className="min-h-screen bg-background text-foreground">
       
       {/* ================= PAGE HEADER (Minimalist Antigravity Style) ================= */}
-      <section className="pt-16 pb-8 md:pt-24 md:pb-12 border-b border-border/40">
+      <section className="pt-12 pb-8 sm:pt-16 md:pt-24 md:pb-12 border-b border-border/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
               Publications
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
               Official authored textbooks, TCS PYQ compilations, and strategic formula handouts written by Guinness World Record faculty and 27+ years veteran directors.
             </p>
           </div>
@@ -71,12 +71,12 @@ export default function BooksPage() {
       </section>
 
       {/* ================= CATEGORY TABS & SEARCH (Exact Antigravity Blog Header) ================= */}
-      <section className="border-b border-border/40 bg-background/95 backdrop-blur-md sticky top-16 z-30">
+      <section className="border-b border-border/40 bg-background/95 backdrop-blur-md sticky top-20 z-30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-3">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 py-3">
             
             {/* Category Navigation Tabs */}
-            <div className="flex items-center gap-6 overflow-x-auto no-scrollbar pt-1">
+            <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar pt-1 pb-1">
               {categories.map((cat) => {
                 const isSelected = selectedCategory === cat;
                 return (
@@ -84,7 +84,7 @@ export default function BooksPage() {
                     key={cat}
                     type="button"
                     onClick={() => setSelectedCategory(cat)}
-                    className={`text-sm sm:text-base font-medium transition-colors pb-3 border-b-2 whitespace-nowrap ${
+                    className={`text-sm sm:text-base font-medium transition-colors pb-2.5 border-b-2 whitespace-nowrap ${
                       isSelected
                         ? "border-sky-500 text-foreground font-semibold"
                         : "border-transparent text-muted-foreground hover:text-foreground"
@@ -97,7 +97,7 @@ export default function BooksPage() {
             </div>
 
             {/* Right Tools: Search Bar & Book Counter */}
-            <div className="flex items-center gap-3 shrink-0 pb-2 md:pb-0">
+            <div className="flex items-center gap-3 shrink-0 pb-1 md:pb-0 w-full md:w-auto">
               <div className="relative w-full sm:w-64">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <input

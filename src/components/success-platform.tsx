@@ -61,20 +61,20 @@ export function SuccessPlatform() {
   return (
     <section
       id="ecosystem"
-      className="relative overflow-hidden py-14 md:py-20 border-b border-border/40 bg-white dark:bg-background"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 border-b border-border/40 bg-white dark:bg-background"
     >
       <div className="relative mx-auto max-w-7xl px-4 z-10">
         
         {/* Section Header matching 'Coach Success Platform' reference */}
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-purple-300/80 bg-purple-100/70 dark:bg-purple-950/40 px-3.5 py-1 text-xs font-bold text-purple-700 dark:text-purple-300 shadow-sm">
             <Sparkles className="size-3.5" />
             <span>The Unified Preparation Ecosystem</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#a855f7] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#a855f7] tracking-tight">
             Everest Success Platform
           </h2>
-          <p className="mt-2 text-xs md:text-sm text-muted-foreground max-w-xl mx-auto font-medium">
+          <p className="mt-2 text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto font-medium">
             Live Classes · 4,000+ TCS PYQ Testing · 1-on-1 Doubt Mentorship — An interconnected ecosystem.
           </p>
         </div>
@@ -446,11 +446,11 @@ export function SuccessPlatform() {
         </div>
 
         {/* ================= MOBILE / TABLET RESPONSIVE VIEW (< lg) ================= */}
-        <div className="lg:hidden flex flex-col gap-6 items-center">
+        <div className="lg:hidden flex flex-col sm:flex-row sm:flex-wrap justify-center gap-6 items-center">
           {nodes.map((node) => (
             <div
               key={node.id}
-              className={`relative w-full max-w-[290px] h-[340px] rounded-[50px] p-6 text-center flex flex-col items-center justify-between border border-purple-200/80 shadow-md ${node.bgTint}`}
+              className={`relative w-full max-w-[300px] sm:max-w-[320px] h-[340px] rounded-[36px] sm:rounded-[48px] p-6 text-center flex flex-col items-center justify-between border border-purple-200/80 shadow-md ${node.bgTint}`}
             >
               <div className="mt-4">
                 <h3 className="text-2xl font-black text-slate-900 dark:text-foreground tracking-tight">

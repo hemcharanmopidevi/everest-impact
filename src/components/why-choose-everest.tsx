@@ -123,13 +123,13 @@ export function WhyChooseEverest() {
     let animId: number;
     const startTime = performance.now();
     const duration = 12000; // 12 seconds period — calm, smooth wave
-    const amplitude = 32; // 32px vertical oscillation amplitude
 
     const animate = (currentTime: number) => {
       const elapsed = (currentTime - startTime) % duration;
       const phase = (elapsed / duration) * Math.PI * 2;
       const elements = bouncerRefs.current;
       const total = elements.length;
+      const amplitude = typeof window !== "undefined" && window.innerWidth < 640 ? 14 : 30;
 
       for (let i = 0; i < total; i++) {
         const el = elements[i];
@@ -162,7 +162,7 @@ export function WhyChooseEverest() {
   return (
     <section
       id="why"
-      className="relative overflow-hidden py-20 md:py-28 border-y border-border/40 bg-gradient-to-b from-card/30 via-background to-card/20"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-24 border-y border-border/40 bg-gradient-to-b from-card/30 via-background to-card/20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -172,21 +172,24 @@ export function WhyChooseEverest() {
 
       <div className="relative mx-auto max-w-7xl px-4">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3.5 py-1 text-xs font-bold text-sky-400 shadow-sm">
             <Sparkles className="size-3.5" />
             <span>The Everest Advantage</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             Why Students Choose <span className="gradient-text">Everest</span>
           </h2>
-          <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
             12 core institutional standards driving India&apos;s highest SSC selections.
           </p>
         </div>
 
         {/* Antigravity Sinusoidal Wave Ribbon of Icons */}
-        <div className="relative w-full overflow-x-auto no-scrollbar py-14 px-2">
+        <div className="relative w-full overflow-x-auto no-scrollbar py-8 sm:py-12 md:py-14 px-2">
+          {/* Edge fade indicators for mobile scrolling */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-background to-transparent z-10 md:hidden" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent z-10 md:hidden" />
           {/* Subtle horizontal baseline guide */}
           <div className="pointer-events-none absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
 

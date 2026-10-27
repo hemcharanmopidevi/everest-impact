@@ -81,7 +81,7 @@ export function Header() {
           type="button"
           aria-label="Toggle navigation menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="inline-flex size-10 items-center justify-center rounded-xl text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-xl text-foreground transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 md:hidden"
         >
           {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
@@ -89,7 +89,7 @@ export function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-t border-slate-100 bg-white px-6 py-6 shadow-xl md:hidden animate-fade-in">
+        <div className="border-t border-border bg-background dark:bg-card px-6 py-6 shadow-xl md:hidden animate-fade-in">
           <div className="mb-6 flex items-center">
             <Image
               src={brand.logo}
@@ -111,7 +111,7 @@ export function Header() {
                   className={`text-base font-semibold py-1 flex items-center justify-between ${
                     isActive
                       ? "text-sky-500 font-bold"
-                      : "text-slate-800 dark:text-slate-200 hover:text-sky-500"
+                      : "text-foreground hover:text-sky-500"
                   }`}
                 >
                   <span>{link.label}</span>
@@ -119,11 +119,11 @@ export function Header() {
               );
             })}
           </nav>
-          <div className="mt-6 flex flex-col gap-3 pt-6 border-t border-slate-100">
+          <div className="mt-6 flex flex-col gap-3 pt-6 border-t border-border">
             <Link
               href="/auth/signin"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full rounded-full bg-slate-100 py-3 text-center text-sm font-semibold text-slate-800"
+              className="w-full rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 py-3 text-center text-sm font-semibold text-foreground transition-colors"
             >
               Student Login
             </Link>
@@ -131,7 +131,7 @@ export function Header() {
               href="https://wa.me/919030030185"
               target="_blank"
               rel="noreferrer"
-              className="w-full rounded-full btn-premium py-3 text-center text-sm font-semibold text-white shadow-md"
+              className="w-full rounded-full btn-premium py-3 text-center text-sm font-semibold text-white shadow-md active:scale-95"
             >
               Get in Touch (9030030185)
             </a>
