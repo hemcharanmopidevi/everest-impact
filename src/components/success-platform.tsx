@@ -10,6 +10,7 @@ import {
   Calendar,
   Search,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 interface PlatformNode {
@@ -77,11 +78,15 @@ export function SuccessPlatform() {
         
         {/* Section Header matching 'Coach Success Platform' reference */}
         <div className="text-center mb-10 md:mb-12">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-purple-300/80 bg-purple-100/70 dark:bg-purple-950/40 px-3.5 py-1 text-xs font-bold text-purple-700 dark:text-purple-300 shadow-sm">
+            <Sparkles className="size-3.5" />
+            <span>The Unified Preparation Ecosystem</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#a855f7] tracking-tight">
-            Coach Success Platform
+            Everest Success Platform
           </h2>
           <p className="mt-2 text-xs md:text-sm text-muted-foreground max-w-xl mx-auto font-medium">
-            Live Classes · 4000+ TCS PYQ Testing · 1-on-1 Doubt Mentorship — An interconnected ecosystem.
+            Live Classes · 4,000+ TCS PYQ Testing · 1-on-1 Doubt Mentorship — An interconnected ecosystem.
           </p>
         </div>
 
@@ -103,7 +108,7 @@ export function SuccessPlatform() {
             </defs>
 
             {/* ====== 1. THREE INDIVIDUAL DOTTED OVAL BOUNDARIES (Refined Decreased Radii) ====== */}
-            {/* Oval 1 Dotted Boundary (Left: Education) */}
+            {/* Oval 1 Dotted Boundary (Left: Live Coaching) */}
             <ellipse
               cx="240"
               cy="240"
@@ -118,7 +123,7 @@ export function SuccessPlatform() {
               <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
             </ellipse>
 
-            {/* Oval 2 Dotted Boundary (Center: Software) */}
+            {/* Oval 2 Dotted Boundary (Center: Test Portal) */}
             <ellipse
               cx="600"
               cy="240"
@@ -133,7 +138,7 @@ export function SuccessPlatform() {
               <animate attributeName="stroke-dashoffset" from="0" to="300" dur="22s" repeatCount="indefinite" />
             </ellipse>
 
-            {/* Oval 3 Dotted Boundary (Right: Marketplace) */}
+            {/* Oval 3 Dotted Boundary (Right: 1-on-1 Doubts) */}
             <ellipse
               cx="960"
               cy="240"
@@ -255,81 +260,90 @@ export function SuccessPlatform() {
 
           {/* ================= 3 PROPORTIONATELY SIZED DECREASED OVAL CARDS ================= */}
           
-          {/* Card 1: Education (Live Coaching) */}
+          {/* Card 1: Stage 1 - Live Coaching */}
           <div className="absolute left-[240px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-4 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-1">
-                <h3 className="text-xl font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors">
-                  Education
+            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-0.5">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2 py-0.5 rounded-full mb-1">
+                  STAGE 1
+                </span>
+                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                  Live Coaching
                 </h3>
-                <p className="mt-1.5 text-[11px] leading-snug text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
-                  Access world-class, curated content to elevate your impact.
+                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                  1,200+ hours by Guinness Record faculty &amp; directors.
                 </p>
               </div>
               <Link
                 href="/courses"
-                className="rounded-full bg-[#a89090] hover:bg-[#8f7575] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
               >
-                Learn More
+                Explore Batches
               </Link>
             </div>
           </div>
 
-          {/* Card 2: Software (Test Portal) */}
+          {/* Card 2: Stage 2 - Test Portal */}
           <div className="absolute left-[600px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 px-3.5 py-4 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-1">
-                <h3 className="text-xl font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors">
-                  Software
+            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-0.5">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-100/90 dark:bg-sky-950/60 px-2 py-0.5 rounded-full mb-1">
+                  STAGE 2
+                </span>
+                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                  Test Portal
                 </h3>
-                <p className="mt-1.5 text-[11px] leading-snug text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
-                  Manage the logistics and administration of your practice with ease.
+                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                  4,000+ TCS PYQs, daily mock tests &amp; AI analytics.
                 </p>
               </div>
               <Link
                 href="/test-series"
-                className="rounded-full bg-[#93c5fd] hover:bg-[#60a5fa] text-slate-900 px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-sky-500 hover:bg-sky-600 text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
               >
-                Learn More
+                Practice Portal
               </Link>
             </div>
           </div>
 
-          {/* Card 3: Marketplace (1-on-1 Doubts) */}
+          {/* Card 3: Stage 3 - 1-on-1 Doubts */}
           <div className="absolute left-[960px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-4 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-1">
-                <h3 className="text-xl font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors">
-                  Marketplace
+            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-0.5">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2 py-0.5 rounded-full mb-1">
+                  STAGE 3
+                </span>
+                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                  1-on-1 Doubts
                 </h3>
-                <p className="mt-1.5 text-[11px] leading-snug text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
-                  Showcase your talents, attract new clients, and grow your practice.
+                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                  8–10 associate faculty daily 9 AM–6 PM &amp; 18 books.
                 </p>
               </div>
               <Link
                 href="/books"
-                className="rounded-full bg-[#a89090] hover:bg-[#8f7575] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
               >
-                Learn More
+                View 18 Books
               </Link>
             </div>
           </div>
 
           {/* ================= FLOATING MENTORS, STUDENTS & SPEECH BUBBLES ================= */}
 
-          {/* Top Avatar above Education */}
+          {/* Top Avatar above Live Coaching */}
           <div className="absolute left-[225px] top-[25px] z-20 flex items-center gap-2">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/thanuja_circle.jpg" alt="Mentor" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
-            {/* Speech bubble: exact quote from picture */}
+            {/* Speech bubble: Everest student achievement */}
             <div className="rounded-xl bg-white/95 dark:bg-card px-3.5 py-1 text-[11px] font-bold text-slate-700 dark:text-slate-200 shadow-md border border-slate-100 dark:border-slate-800 whitespace-nowrap">
-              Thank you for the coaching tool!
+              Cleared SSC CGL AIR-24! 🏆
             </div>
           </div>
 
-          {/* Top Avatar between Education & Software */}
+          {/* Top Avatar between Live Coaching & Test Portal */}
           <div className="absolute left-[565px] top-[75px] z-20">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/b-rajkumar_circle.jpg" alt="Director" width={40} height={40} className="w-full h-full object-cover" />
@@ -337,7 +351,7 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Top Avatar above Marketplace */}
+          {/* Top Avatar above 1-on-1 Doubts */}
           <div className="absolute left-[830px] top-[75px] z-20">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/shiva-shankar_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
@@ -345,7 +359,7 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Bottom Avatar under Education (far left) - Positioned with ample breathing room */}
+          {/* Bottom Avatar under Live Coaching (far left) */}
           <div className="absolute left-[130px] top-[365px] z-20 flex flex-col items-start gap-1.5">
             <div className="relative flex items-center">
               <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
@@ -356,14 +370,14 @@ export function SuccessPlatform() {
                 <BarChart2 className="size-3" />
               </div>
             </div>
-            {/* Speech bubble: placed cleanly below */}
+            {/* Speech bubble: Everest student achievement */}
             <div className="rounded-xl bg-white/95 dark:bg-card px-3.5 py-1 text-[11px] font-bold text-slate-700 dark:text-slate-200 shadow-md border border-slate-100 dark:border-slate-800 whitespace-nowrap flex items-center gap-1">
-              <span>Thank you for the report!</span>
-              <span>🙏</span>
+              <span>Scored 48/50 in English!</span>
+              <span>🎯</span>
             </div>
           </div>
 
-          {/* Bottom Avatar between Education & Software */}
+          {/* Bottom Avatar between Live Coaching & Test Portal */}
           <div className="absolute left-[305px] top-[395px] z-20">
             <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/images/avatars/avatar_2.jpg" alt="Coach" width={36} height={36} className="w-full h-full object-cover" />
@@ -371,16 +385,16 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Bottom Avatar under Software */}
+          {/* Bottom Avatar under Test Portal */}
           <div className="absolute left-[595px] top-[365px] z-20 flex flex-col items-start gap-1.5">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/kalyan_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
-            {/* Speech bubble: placed cleanly below */}
+            {/* Speech bubble: Everest student achievement */}
             <div className="rounded-xl bg-white/95 dark:bg-card px-3.5 py-1 text-[11px] font-bold text-slate-700 dark:text-slate-200 shadow-md border border-slate-100 dark:border-slate-800 whitespace-nowrap flex items-center gap-1">
-              <span>The resource is on the way!</span>
-              <span>✈️</span>
+              <span>Formula Book &amp; Handouts sent!</span>
+              <span>📚</span>
             </div>
           </div>
 
