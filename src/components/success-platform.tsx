@@ -96,13 +96,12 @@ export function SuccessPlatform() {
               </linearGradient>
             </defs>
 
-            {/* ====== 1. THREE INDIVIDUAL DOTTED OVAL BOUNDARIES (Refined Decreased Radii) ====== */}
-            {/* Oval 1 Dotted Boundary (Left: Live Coaching) */}
-            <ellipse
+            {/* ====== 1. THREE INDIVIDUAL DOTTED CIRCULAR BOUNDARIES (Perfect Circles) ====== */}
+            {/* Circle 1 Dotted Boundary (Left: Live Coaching) */}
+            <circle
               cx="240"
               cy="240"
-              rx="112"
-              ry="128"
+              r="122"
               className="animate-dots-flow"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -110,14 +109,13 @@ export function SuccessPlatform() {
               strokeLinecap="round"
             >
               <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
-            </ellipse>
+            </circle>
 
-            {/* Oval 2 Dotted Boundary (Center: Test Portal) */}
-            <ellipse
+            {/* Circle 2 Dotted Boundary (Center: Test Portal) */}
+            <circle
               cx="600"
               cy="240"
-              rx="112"
-              ry="128"
+              r="122"
               className="animate-dots-flow-reverse"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -125,14 +123,13 @@ export function SuccessPlatform() {
               strokeLinecap="round"
             >
               <animate attributeName="stroke-dashoffset" from="0" to="300" dur="22s" repeatCount="indefinite" />
-            </ellipse>
+            </circle>
 
-            {/* Oval 3 Dotted Boundary (Right: 1-on-1 Doubts) */}
-            <ellipse
+            {/* Circle 3 Dotted Boundary (Right: 1-on-1 Doubts) */}
+            <circle
               cx="960"
               cy="240"
-              rx="112"
-              ry="128"
+              r="122"
               className="animate-dots-flow"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -140,13 +137,13 @@ export function SuccessPlatform() {
               strokeLinecap="round"
             >
               <animate attributeName="stroke-dashoffset" from="0" to="-300" dur="22s" repeatCount="indefinite" />
-            </ellipse>
+            </circle>
 
-            {/* ====== 2. CROSSING X TANGENTS BETWEEN OVAL 1 & OVAL 2 ====== */}
-            {/* Top-Right of Oval 1 down through (420, 240) to Bottom-Left of Oval 2 */}
+            {/* ====== 2. CROSSING X TANGENTS BETWEEN CIRCLE 1 & CIRCLE 2 ====== */}
+            {/* Top-Right of Circle 1 down through (420, 240) to Bottom-Left of Circle 2 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 323 154 C 360 190, 395 218, 420 240 C 445 262, 480 290, 517 326"
+              d="M 326 154 C 362 190, 395 218, 420 240 C 445 262, 478 290, 514 326"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -154,10 +151,10 @@ export function SuccessPlatform() {
             >
               <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
-            {/* Bottom-Right of Oval 1 up through (420, 240) to Top-Left of Oval 2 */}
+            {/* Bottom-Right of Circle 1 up through (420, 240) to Top-Left of Circle 2 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 323 326 C 360 290, 395 262, 420 240 C 445 218, 480 190, 517 154"
+              d="M 326 326 C 362 290, 395 262, 420 240 C 445 218, 478 190, 514 154"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -166,11 +163,11 @@ export function SuccessPlatform() {
               <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
 
-            {/* ====== 3. CROSSING X TANGENTS BETWEEN OVAL 2 & OVAL 3 ====== */}
-            {/* Top-Right of Oval 2 down through (780, 240) to Bottom-Left of Oval 3 */}
+            {/* ====== 3. CROSSING X TANGENTS BETWEEN CIRCLE 2 & CIRCLE 3 ====== */}
+            {/* Top-Right of Circle 2 down through (780, 240) to Bottom-Left of Circle 3 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 683 154 C 720 190, 755 218, 780 240 C 805 262, 840 290, 877 326"
+              d="M 686 154 C 722 190, 755 218, 780 240 C 805 262, 838 290, 874 326"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -178,10 +175,10 @@ export function SuccessPlatform() {
             >
               <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="18s" repeatCount="indefinite" />
             </path>
-            {/* Bottom-Right of Oval 2 up through (780, 240) to Top-Left of Oval 3 */}
+            {/* Bottom-Right of Circle 2 up through (780, 240) to Top-Left of Circle 3 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 683 326 C 720 290, 755 262, 780 240 C 805 218, 840 190, 877 154"
+              d="M 686 326 C 722 290, 755 262, 780 240 C 805 218, 838 190, 874 154"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -247,25 +244,25 @@ export function SuccessPlatform() {
             <text x="895" y="170" fill="#a855f7" fontSize="13" fontWeight="bold">↘</text>
           </svg>
 
-          {/* ================= 3 PROPORTIONATELY SIZED DECREASED OVAL CARDS ================= */}
+          {/* ================= 3 MATHEMATICALLY PERFECT CIRCULAR CARDS ================= */}
           
           {/* Card 1: Stage 1 - Live Coaching */}
           <div className="absolute left-[240px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-0.5">
-                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2 py-0.5 rounded-full mb-1">
+            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-1 flex flex-col items-center">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 1
                 </span>
-                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                <h3 className="text-[17px] font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
                   Live Coaching
                 </h3>
-                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                <p className="mt-1 text-[10px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-2 max-w-[150px] mx-auto">
                   1,200+ hours by Guinness Record faculty &amp; directors.
                 </p>
               </div>
               <Link
                 href="/courses"
-                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-4 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-1"
               >
                 Explore Batches
               </Link>
@@ -274,21 +271,21 @@ export function SuccessPlatform() {
 
           {/* Card 2: Stage 2 - Test Portal */}
           <div className="absolute left-[600px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-0.5">
-                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-100/90 dark:bg-sky-950/60 px-2 py-0.5 rounded-full mb-1">
+            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-1 flex flex-col items-center">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-100/90 dark:bg-sky-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 2
                 </span>
-                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                <h3 className="text-[17px] font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
                   Test Portal
                 </h3>
-                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                <p className="mt-1 text-[10px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-2 max-w-[150px] mx-auto">
                   4,000+ TCS PYQs, daily mock tests &amp; AI analytics.
                 </p>
               </div>
               <Link
                 href="/test-series"
-                className="rounded-full bg-sky-500 hover:bg-sky-600 text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-sky-500 hover:bg-sky-600 text-white px-4 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-1"
               >
                 Practice Portal
               </Link>
@@ -297,21 +294,21 @@ export function SuccessPlatform() {
 
           {/* Card 3: Stage 3 - 1-on-1 Doubts */}
           <div className="absolute left-[960px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[184px] h-[198px] rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 px-3.5 py-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
-              <div className="mt-0.5">
-                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2 py-0.5 rounded-full mb-1">
+            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+              <div className="mt-1 flex flex-col items-center">
+                <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 3
                 </span>
-                <h3 className="text-lg font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
+                <h3 className="text-[17px] font-black text-slate-900 dark:text-foreground tracking-tight group-hover:text-[#a855f7] transition-colors leading-tight">
                   1-on-1 Doubts
                 </h3>
-                <p className="mt-1 text-[10.5px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-1 max-w-[150px] mx-auto">
+                <p className="mt-1 text-[10px] leading-tight text-slate-600 dark:text-slate-300 font-medium px-2 max-w-[150px] mx-auto">
                   8–10 associate faculty daily 9 AM–6 PM &amp; 18 books.
                 </p>
               </div>
               <Link
                 href="/books"
-                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-5 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-0.5"
+                className="rounded-full bg-[#a855f7] hover:bg-[#9333ea] text-white px-4 py-1.5 text-[11px] font-bold transition-all shadow-sm active:scale-95 mb-1"
               >
                 View 18 Books
               </Link>
@@ -415,9 +412,9 @@ export function SuccessPlatform() {
             <User className="size-3.5" />
           </div>
 
-          {/* Video play badge (Top middle-right) */}
-          <div className="absolute left-[660px] top-[125px] z-20 flex size-6 items-center justify-center rounded-md bg-[#7c3aed] text-white shadow-md">
-            <Play className="size-3.5 fill-current" />
+          {/* Video play badge (Top middle-right of Test Portal circle) */}
+          <div className="absolute left-[675px] top-[145px] -translate-x-1/2 -translate-y-1/2 z-20 flex size-7 items-center justify-center rounded-full bg-[#7c3aed] text-white shadow-md">
+            <Play className="size-3.5 fill-current ml-0.5" />
           </div>
 
           {/* Calendar badge (Top right) */}
