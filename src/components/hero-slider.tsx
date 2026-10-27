@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Award, BookOpen, Users } from "lucide-react";
+import { AntigravityParticles } from "./antigravity-particles";
 
 const mentors = [
   { id: 1, name: "B. Rajkumar Sir", role: "Quant Director · Guinness Record Holder", image: "/faculty/circle_portraits/b-rajkumar_circle.jpg", active: true },
@@ -16,12 +17,11 @@ export function HeroSlider() {
   return (
     <section className="relative w-full px-4 sm:px-6 lg:px-8 pt-4 pb-12 md:pt-6 md:pb-16">
       <div className="mx-auto max-w-[1360px]">
-        {/* Main Royal Navy Blue & Crimson Red Styled Hero Card */}
-        <div className="relative overflow-hidden rounded-[2.5rem] lg:rounded-[3rem] bg-gradient-to-br from-[#F8FAFC] via-[#EEF4FF]/75 to-[#F1F5F9] shadow-[0_20px_50px_rgba(16,42,92,0.08)] border border-blue-100/80">
+        {/* Main Hero Card with Clean White Background & Google Antigravity Particles */}
+        <div className="relative overflow-hidden rounded-[2.5rem] lg:rounded-[3rem] bg-white dark:bg-card shadow-[0_20px_60px_rgba(16,42,92,0.07)] border border-slate-200/80 dark:border-border">
           
-          {/* Subtle Ambient Brand Glows */}
-          <div className="absolute -left-20 -top-20 -z-0 size-96 rounded-full bg-sky-500/10 blur-[100px]" />
-          <div className="absolute -right-20 -bottom-20 -z-0 size-96 rounded-full bg-sky-400/10 blur-[100px]" />
+          {/* Google Antigravity-style Interactive Floating Particles Canvas */}
+          <AntigravityParticles />
 
           <div className="relative z-10 grid items-center gap-8 lg:grid-cols-12 lg:gap-4 px-6 py-10 sm:px-10 sm:py-14 md:px-14 lg:px-16 lg:py-16">
             
