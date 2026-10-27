@@ -319,8 +319,8 @@ export function SuccessPlatform() {
 
           {/* Top Avatar above Education */}
           <div className="absolute left-[225px] top-[25px] z-20 flex items-center gap-2">
-            <div className="relative size-10 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/faculty/circle_portraits/thanuja_circle.jpg" alt="Mentor" fill className="object-cover" />
+            <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/faculty/circle_portraits/thanuja_circle.jpg" alt="Mentor" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
             {/* Speech bubble: exact quote from picture */}
@@ -331,16 +331,16 @@ export function SuccessPlatform() {
 
           {/* Top Avatar between Education & Software */}
           <div className="absolute left-[565px] top-[75px] z-20">
-            <div className="relative size-10 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/faculty/circle_portraits/b-rajkumar_circle.jpg" alt="Director" fill className="object-cover" />
+            <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/faculty/circle_portraits/b-rajkumar_circle.jpg" alt="Director" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
 
           {/* Top Avatar above Marketplace */}
           <div className="absolute left-[830px] top-[75px] z-20">
-            <div className="relative size-10 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/faculty/circle_portraits/shiva-shankar_circle.jpg" alt="Faculty" fill className="object-cover" />
+            <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/faculty/circle_portraits/shiva-shankar_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
@@ -348,8 +348,8 @@ export function SuccessPlatform() {
           {/* Bottom Avatar under Education (far left) - Positioned with ample breathing room */}
           <div className="absolute left-[130px] top-[365px] z-20 flex flex-col items-start gap-1.5">
             <div className="relative flex items-center">
-              <div className="relative size-10 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-                <Image src="/images/avatars/avatar_4.jpg" alt="Student" fill className="object-cover" />
+              <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+                <Image src="/images/avatars/avatar_4.jpg" alt="Student" width={40} height={40} className="w-full h-full object-cover" />
                 <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
               </div>
               <div className="-ml-1.5 -mt-3.5 flex size-5 items-center justify-center rounded-md bg-[#7c3aed] text-white shadow-md">
@@ -365,16 +365,16 @@ export function SuccessPlatform() {
 
           {/* Bottom Avatar between Education & Software */}
           <div className="absolute left-[305px] top-[395px] z-20">
-            <div className="relative size-9 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/images/avatars/avatar_2.jpg" alt="Coach" fill className="object-cover" />
+            <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/images/avatars/avatar_2.jpg" alt="Coach" width={36} height={36} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
 
           {/* Bottom Avatar under Software */}
           <div className="absolute left-[595px] top-[365px] z-20 flex flex-col items-start gap-1.5">
-            <div className="relative size-10 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/faculty/circle_portraits/kalyan_circle.jpg" alt="Faculty" fill className="object-cover" />
+            <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/faculty/circle_portraits/kalyan_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
             {/* Speech bubble: placed cleanly below */}
@@ -386,16 +386,16 @@ export function SuccessPlatform() {
 
           {/* Bottom Avatar between Software & Marketplace */}
           <div className="absolute left-[755px] top-[395px] z-20">
-            <div className="relative size-9 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/faculty/circle_portraits/b-srinivasulu_circle.jpg" alt="Director" fill className="object-cover" />
+            <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/faculty/circle_portraits/b-srinivasulu_circle.jpg" alt="Director" width={36} height={36} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
 
           {/* Bottom Avatar under Marketplace (far right) */}
           <div className="absolute left-[885px] top-[330px] z-20">
-            <div className="relative size-9 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
-              <Image src="/images/avatars/avatar_5.jpg" alt="Client" fill className="object-cover" />
+            <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
+              <Image src="/images/avatars/avatar_5.jpg" alt="Client" width={36} height={36} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>

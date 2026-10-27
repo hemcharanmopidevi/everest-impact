@@ -103,12 +103,13 @@ export function HeroSlider() {
                 <div className="space-y-2.5">
                   {/* Mentor 1 */}
                   <div className="flex items-center gap-2.5">
-                    <div className="relative size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
+                    <div className="relative w-8 h-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
                       <Image
                         src="/images/avatars/avatar_1.jpg"
                         alt="B. Rajkumar Sir"
-                        fill
-                        className="object-cover"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="min-w-0 flex-1">
@@ -122,12 +123,13 @@ export function HeroSlider() {
 
                   {/* Mentor 2 */}
                   <div className="flex items-center gap-2.5 border-t border-white/10 pt-2">
-                    <div className="relative size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
+                    <div className="relative w-8 h-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
                       <Image
                         src="/images/avatars/avatar_2.jpg"
                         alt="B. Sreenivasulu Reddy Sir"
-                        fill
-                        className="object-cover"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="min-w-0 flex-1">
@@ -186,13 +188,14 @@ export function HeroSlider() {
                     {mentors.slice(0, 4).map((m) => (
                       <div
                         key={m.id}
-                        className="relative size-5 overflow-hidden rounded-full ring-1 ring-white"
+                        className="relative w-5 h-5 shrink-0 overflow-hidden rounded-full ring-1 ring-white"
                       >
                         <Image
                           src={m.image}
                           alt={m.name}
-                          fill
-                          className="object-cover"
+                          width={20}
+                          height={20}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     ))}

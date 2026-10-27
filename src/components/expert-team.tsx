@@ -30,14 +30,14 @@ export function ExpertTeam() {
 
               {/* Circular Portrait Avatar overlapping banner */}
               <div className="relative -mt-16 flex justify-center">
-                <div className="relative size-32 sm:size-36 rounded-full p-1 bg-gradient-to-tr from-black via-sky-600 to-sky-400 shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-all duration-500">
-                  <div className="relative size-full rounded-full overflow-hidden bg-slate-100 ring-4 ring-card">
+                <div className="relative w-32 h-32 sm:w-36 sm:h-36 shrink-0 rounded-full p-1 bg-gradient-to-tr from-black via-sky-600 to-sky-400 shadow-xl shadow-sky-500/20 group-hover:scale-105 transition-all duration-500">
+                  <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-100 ring-4 ring-card">
                     <Image
                       src={member.image}
                       alt={member.name}
-                      fill
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                      sizes="(max-width: 640px) 128px, 144px"
+                      width={144}
+                      height={144}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                 </div>
