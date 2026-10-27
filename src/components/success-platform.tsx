@@ -80,11 +80,12 @@ export function SuccessPlatform() {
         </div>
 
         {/* ================= DESKTOP EXACT REFERENCE SHAPE FLOW (lg:block) ================= */}
-        <div className="hidden lg:block relative w-full h-[500px]">
+        <div className="hidden lg:flex justify-center overflow-visible">
+          <div className="relative w-[1200px] h-[480px] shrink-0">
           
-          {/* SVG Exact Dotted Tracks: 3 Ovals, Crossing Tangents (X-Crossings), Outer Sweeping Contours */}
+          {/* SVG Exact Dotted Tracks: 3 Perfect Circles, Crossing Tangents (X-Crossings), Outer Sweeping Contours */}
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-0"
+            className="absolute inset-0 w-[1200px] h-[480px] pointer-events-none z-0"
             viewBox="0 0 1200 480"
             fill="none"
           >
@@ -101,7 +102,7 @@ export function SuccessPlatform() {
             <circle
               cx="240"
               cy="240"
-              r="122"
+              r="126"
               className="animate-dots-flow"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -115,7 +116,7 @@ export function SuccessPlatform() {
             <circle
               cx="600"
               cy="240"
-              r="122"
+              r="126"
               className="animate-dots-flow-reverse"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -129,7 +130,7 @@ export function SuccessPlatform() {
             <circle
               cx="960"
               cy="240"
-              r="122"
+              r="126"
               className="animate-dots-flow"
               stroke="#a855f7"
               strokeWidth="2.5"
@@ -143,7 +144,7 @@ export function SuccessPlatform() {
             {/* Top-Right of Circle 1 down through (420, 240) to Bottom-Left of Circle 2 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 326 154 C 362 190, 395 218, 420 240 C 445 262, 478 290, 514 326"
+              d="M 329 151 C 365 185, 395 218, 420 240 C 445 262, 475 295, 511 329"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -154,7 +155,7 @@ export function SuccessPlatform() {
             {/* Bottom-Right of Circle 1 up through (420, 240) to Top-Left of Circle 2 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 326 326 C 362 290, 395 262, 420 240 C 445 218, 478 190, 514 154"
+              d="M 329 329 C 365 295, 395 262, 420 240 C 445 218, 475 185, 511 151"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -167,7 +168,7 @@ export function SuccessPlatform() {
             {/* Top-Right of Circle 2 down through (780, 240) to Bottom-Left of Circle 3 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 686 154 C 722 190, 755 218, 780 240 C 805 262, 838 290, 874 326"
+              d="M 689 151 C 725 185, 755 218, 780 240 C 805 262, 835 295, 871 329"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -178,7 +179,7 @@ export function SuccessPlatform() {
             {/* Bottom-Right of Circle 2 up through (780, 240) to Top-Left of Circle 3 */}
             <path
               className="animate-dots-flow-fast"
-              d="M 686 326 C 722 290, 755 262, 780 240 C 805 218, 838 190, 874 154"
+              d="M 689 329 C 725 295, 755 262, 780 240 C 805 218, 835 185, 871 151"
               stroke="#a855f7"
               strokeWidth="2.5"
               strokeDasharray="3 12"
@@ -248,7 +249,10 @@ export function SuccessPlatform() {
           
           {/* Card 1: Stage 1 - Live Coaching */}
           <div className="absolute left-[240px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+            <div
+              style={{ width: "196px", height: "196px", borderRadius: "9999px" }}
+              className="group relative w-[196px] h-[196px] shrink-0 rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300"
+            >
               <div className="mt-1 flex flex-col items-center">
                 <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 1
@@ -271,7 +275,10 @@ export function SuccessPlatform() {
 
           {/* Card 2: Stage 2 - Test Portal */}
           <div className="absolute left-[600px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300">
+            <div
+              style={{ width: "196px", height: "196px", borderRadius: "9999px" }}
+              className="group relative w-[196px] h-[196px] shrink-0 rounded-full bg-[#eff6ff]/95 dark:bg-[#1e1b4b]/35 border border-blue-200/90 dark:border-blue-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.18)] hover:scale-105 transition-all duration-300"
+            >
               <div className="mt-1 flex flex-col items-center">
                 <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 bg-sky-100/90 dark:bg-sky-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 2
@@ -294,7 +301,10 @@ export function SuccessPlatform() {
 
           {/* Card 3: Stage 3 - 1-on-1 Doubts */}
           <div className="absolute left-[960px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="group relative w-[190px] h-[190px] aspect-square rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300">
+            <div
+              style={{ width: "196px", height: "196px", borderRadius: "9999px" }}
+              className="group relative w-[196px] h-[196px] shrink-0 rounded-full bg-[#fdf2f8]/95 dark:bg-[#2e1065]/25 border border-pink-200/90 dark:border-pink-900/40 p-3.5 flex flex-col items-center justify-between text-center shadow-[0_8px_25px_rgba(236,72,153,0.08)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.18)] hover:scale-105 transition-all duration-300"
+            >
               <div className="mt-1 flex flex-col items-center">
                 <span className="inline-block text-[9px] font-extrabold uppercase tracking-wider text-pink-600 dark:text-pink-400 bg-pink-100/90 dark:bg-pink-950/60 px-2.5 py-0.5 rounded-full mb-1">
                   STAGE 3
@@ -329,16 +339,16 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Top Avatar between Live Coaching & Test Portal */}
-          <div className="absolute left-[565px] top-[75px] z-20">
+          {/* Top Avatar centered above Test Portal */}
+          <div className="absolute left-[600px] top-[55px] -translate-x-1/2 z-20">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/b-rajkumar_circle.jpg" alt="Director" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
 
-          {/* Top Avatar above 1-on-1 Doubts */}
-          <div className="absolute left-[830px] top-[75px] z-20">
+          {/* Top Avatar centered above 1-on-1 Doubts */}
+          <div className="absolute left-[960px] top-[55px] -translate-x-1/2 z-20">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/shiva-shankar_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
@@ -371,8 +381,8 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Bottom Avatar under Test Portal */}
-          <div className="absolute left-[595px] top-[365px] z-20 flex flex-col items-start gap-1.5">
+          {/* Bottom Avatar centered under Test Portal */}
+          <div className="absolute left-[600px] top-[380px] -translate-x-1/2 z-20 flex flex-col items-center gap-1.5">
             <div className="relative w-10 h-10 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/kalyan_circle.jpg" alt="Faculty" width={40} height={40} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
@@ -384,16 +394,16 @@ export function SuccessPlatform() {
             </div>
           </div>
 
-          {/* Bottom Avatar between Software & Marketplace */}
-          <div className="absolute left-[755px] top-[395px] z-20">
+          {/* Bottom Avatar between Test Portal & 1-on-1 Doubts */}
+          <div className="absolute left-[780px] top-[395px] -translate-x-1/2 z-20">
             <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/faculty/circle_portraits/b-srinivasulu_circle.jpg" alt="Director" width={36} height={36} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
             </div>
           </div>
 
-          {/* Bottom Avatar under Marketplace (far right) */}
-          <div className="absolute left-[885px] top-[330px] z-20">
+          {/* Bottom Avatar under 1-on-1 Doubts (far right) */}
+          <div className="absolute left-[1010px] top-[355px] z-20">
             <div className="relative w-9 h-9 shrink-0 rounded-full ring-2 ring-white shadow-md overflow-hidden bg-slate-100">
               <Image src="/images/avatars/avatar_5.jpg" alt="Client" width={36} height={36} className="w-full h-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full bg-emerald-500 ring-1.5 ring-white" />
@@ -407,13 +417,13 @@ export function SuccessPlatform() {
             <FileText className="size-3.5" />
           </div>
 
-          {/* User ID badge (Top middle-left) */}
-          <div className="absolute left-[375px] top-[110px] z-20 flex size-6 items-center justify-center rounded-md bg-[#7c3aed] text-white shadow-md">
+          {/* User ID badge (X-Intersection 1 between Stage 1 & Stage 2) */}
+          <div className="absolute left-[420px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-20 flex size-7 items-center justify-center rounded-full bg-[#7c3aed] text-white shadow-md">
             <User className="size-3.5" />
           </div>
 
           {/* Video play badge (Top middle-right of Test Portal circle) */}
-          <div className="absolute left-[675px] top-[145px] -translate-x-1/2 -translate-y-1/2 z-20 flex size-7 items-center justify-center rounded-full bg-[#7c3aed] text-white shadow-md">
+          <div className="absolute left-[689px] top-[151px] -translate-x-1/2 -translate-y-1/2 z-20 flex size-7 items-center justify-center rounded-full bg-[#7c3aed] text-white shadow-md">
             <Play className="size-3.5 fill-current ml-0.5" />
           </div>
 
@@ -422,9 +432,9 @@ export function SuccessPlatform() {
             <Calendar className="size-3.5" />
           </div>
 
-          {/* Search circle badge (Right edge) */}
-          <div className="absolute left-[905px] top-[215px] z-20 flex size-6 items-center justify-center rounded-full border-2 border-[#7c3aed] bg-white text-[#7c3aed] shadow-md">
-            <Search className="size-3" />
+          {/* Search circle badge (X-Intersection 2 between Stage 2 & Stage 3) */}
+          <div className="absolute left-[780px] top-[240px] -translate-x-1/2 -translate-y-1/2 z-20 flex size-7 items-center justify-center rounded-full border-2 border-[#7c3aed] bg-white text-[#7c3aed] shadow-md">
+            <Search className="size-3.5" />
           </div>
 
           {/* Document badge (Bottom middle-left) */}
@@ -432,6 +442,7 @@ export function SuccessPlatform() {
             <FileText className="size-3.5" />
           </div>
 
+          </div>
         </div>
 
         {/* ================= MOBILE / TABLET RESPONSIVE VIEW (< lg) ================= */}
