@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-import { Award, BookOpen, ChevronLeft, ChevronRight, CheckCircle2, Target, Users } from "lucide-react";
+import { Award, ChevronLeft, ChevronRight, CheckCircle2, Target, Users } from "lucide-react";
 
 const sscCourses = [
   {
@@ -338,57 +338,6 @@ export function HeroSlider() {
                 </div>
               </div>
 
-              {/* Widget 2: Faculty Mentors Card (Bottom Left of Character, Overlapping) */}
-              <div className="hidden md:block absolute left-2 sm:left-4 lg:-left-4 bottom-2 sm:bottom-6 z-20 w-[240px] sm:w-[270px] rounded-2xl bg-[#0a1128]/95 backdrop-blur-xl p-4 text-white shadow-2xl border border-white/15 animate-fade-in">
-                <div className="flex flex-col">
-                  <span className="text-sm font-bold text-white tracking-wide">Faculty Mentors</span>
-                  <span className="text-[11px] font-medium text-sky-300 mb-3">
-                    Everest Coaching Point (Dilsukhnagar)
-                  </span>
-                </div>
-
-                <div className="space-y-2.5">
-                  {/* Mentor 1 */}
-                  <div className="flex items-center gap-2.5">
-                    <div className="relative size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
-                      <Image
-                        src="/images/avatars/avatar_1.jpg"
-                        alt="B. Rajkumar Sir"
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-xs font-semibold text-white">B. Rajkumar Sir</p>
-                      <p className="flex items-center gap-1 text-[10px] text-slate-300">
-                        <Award className="size-2.5 shrink-0 text-sky-400" />
-                        <span className="truncate">Quant · Guinness Record Holder</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Mentor 2 */}
-                  <div className="flex items-center gap-2.5 border-t border-white/10 pt-2">
-                    <div className="relative size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/30">
-                      <Image
-                        src="/images/avatars/avatar_2.jpg"
-                        alt="B. Sreenivasulu Reddy Sir"
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-xs font-semibold text-white">B. Sreenivasulu Reddy Sir</p>
-                      <p className="flex items-center gap-1 text-[10px] text-slate-300">
-                        <BookOpen className="size-2.5 shrink-0 text-sky-400" />
-                        <span className="truncate">English Director · 27+ Yrs Exp</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
 
             </div>
