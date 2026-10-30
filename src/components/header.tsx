@@ -6,6 +6,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { brand } from "@/data/site";
+import { AnnouncementBar } from "./announcement-bar";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -86,6 +87,9 @@ export function Header() {
           {mobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </div>
+
+      {/* Scrolling Ticker Bar directly below the Navbar */}
+      <AnnouncementBar />
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (

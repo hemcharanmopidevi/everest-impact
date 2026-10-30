@@ -1,42 +1,85 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Sparkles, X } from "lucide-react";
-import { useState } from "react";
-
 export function AnnouncementBar() {
-  const [visible, setVisible] = useState(true);
-
-  if (!visible) return null;
+  const tickerItems = [
+    {
+      prefix: "★",
+      text: "EVEREST COACHING POINT — South India's trusted exclusive SSC coaching institute, Dilsukhnagar, Hyderabad · Since 2015",
+      highlight: true,
+    },
+    {
+      prefix: "🏆",
+      text: "2000+ Final Selections via SSC — more than 10% of Southern Region SSC CGL Selections",
+      highlight: true,
+    },
+    {
+      prefix: "⚡",
+      text: "August 2026 Live Batch — 3 Days FREE Demo Classes · Admissions Open",
+      highlight: false,
+    },
+    {
+      prefix: "📚",
+      text: "Guinness World Record Holder Faculty · 18 Own Published Books by Directors",
+      highlight: false,
+    },
+    {
+      prefix: "📞",
+      text: "Admissions Helpline: 9030030185 / 9030030186",
+      highlight: false,
+    },
+  ];
 
   return (
-    <div className="animate-announcement relative z-[60] overflow-hidden bg-gradient-to-r from-black via-zinc-950 to-sky-950 border-b border-sky-500/20">
-      {/* Shimmer effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-400/10 to-transparent animate-[shimmer_3s_linear_infinite]" style={{ backgroundSize: '200% 100%' }} />
+    <div className="relative z-50 w-full overflow-hidden bg-[#071126] border-b border-white/10 text-white select-none">
+      <div className="flex items-center h-8 sm:h-8.5">
+        {/* Left Badge: ★ EVEREST */}
+        <div className="relative z-20 flex h-full items-center bg-[#f5a623] px-3 sm:px-4 shrink-0 shadow-md">
+          <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-slate-950 flex items-center gap-1">
+            <span>★</span>
+            <span>EVEREST</span>
+          </span>
+        </div>
 
-      <div className="relative mx-auto flex max-w-7xl items-center justify-center gap-2 sm:gap-3 px-8 sm:px-4 py-2 sm:py-2.5">
-        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-sky-500/20 border border-sky-400/30 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-sky-400 backdrop-blur-sm">
-          <Sparkles className="size-2.5 sm:size-3" />
-          Live
-        </span>
-        <p className="text-xs sm:text-sm font-medium text-white/95 text-center truncate sm:whitespace-normal">
-          August 2026 Live Batch — 3 Days FREE Demo Classes · Admissions Open
-        </p>
-        <Link
-          href="/courses?category=Live%20Courses"
-          className="hidden items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-white/30 sm:inline-flex shrink-0"
-        >
-          Explore now
-          <ArrowRight className="size-3" />
-        </Link>
-        <button
-          type="button"
-          onClick={() => setVisible(false)}
-          aria-label="Dismiss announcement"
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 inline-flex size-6 sm:size-7 items-center justify-center rounded-full text-white/70 transition hover:bg-white/20 hover:text-white"
-        >
-          <X className="size-3 sm:size-3.5" />
-        </button>
+        {/* Marquee Ticker Track */}
+        <div className="relative flex-1 overflow-hidden h-full flex items-center">
+          {/* Subtle gradient edge fade */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-[#071126] to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-[#071126] to-transparent z-10" />
+
+          <div className="flex min-w-max animate-scroll-x items-center py-1">
+            {/* Set 1 */}
+            <div className="flex items-center gap-8 sm:gap-12 px-4 shrink-0">
+              {tickerItems.map((item, idx) => (
+                <div
+                  key={`item-1-${idx}`}
+                  className="flex items-center gap-2 text-[11px] sm:text-xs font-semibold whitespace-nowrap"
+                >
+                  <span className="text-amber-400">{item.prefix}</span>
+                  <span className={item.highlight ? "text-white font-bold" : "text-slate-200"}>
+                    {item.text}
+                  </span>
+                  <span className="text-slate-500 ml-4 sm:ml-6">✦</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Set 2 (for seamless loop) */}
+            <div className="flex items-center gap-8 sm:gap-12 px-4 shrink-0" aria-hidden="true">
+              {tickerItems.map((item, idx) => (
+                <div
+                  key={`item-2-${idx}`}
+                  className="flex items-center gap-2 text-[11px] sm:text-xs font-semibold whitespace-nowrap"
+                >
+                  <span className="text-amber-400">{item.prefix}</span>
+                  <span className={item.highlight ? "text-white font-bold" : "text-slate-200"}>
+                    {item.text}
+                  </span>
+                  <span className="text-slate-500 ml-4 sm:ml-6">✦</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

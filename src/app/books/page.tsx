@@ -71,7 +71,7 @@ export default function BooksPage() {
       </section>
 
       {/* ================= CATEGORY TABS & SEARCH (Exact Antigravity Blog Header) ================= */}
-      <section className="border-b border-border/40 bg-background/95 backdrop-blur-md sticky top-20 z-30">
+      <section className="border-b border-border/40 bg-background/95 backdrop-blur-md sticky top-28 z-30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 py-3">
             
