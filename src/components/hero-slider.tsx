@@ -68,7 +68,7 @@ export function HeroSlider() {
               <div className="relative z-10 w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/15 border border-white/60">
                 <Image
                   src="/images/coach_hero.jpg"
-                  alt="Everest Coaching Point Mentorship"
+                  alt="SSC CGL Central Government Officer - Everest Coaching Point"
                   fill
                   className="object-cover object-top"
                   priority
