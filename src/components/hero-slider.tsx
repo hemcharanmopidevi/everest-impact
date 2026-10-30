@@ -112,14 +112,6 @@ const sscCourses = [
   },
 ];
 
-const mentors = [
-  { id: 1, name: "B. Rajkumar Sir", role: "Quant Director · Guinness Record Holder", image: "/faculty/circle_portraits/b-rajkumar_circle.jpg" },
-  { id: 2, name: "B. Sreenivasulu Reddy Sir", role: "English Director · 27+ Yrs Exp", image: "/faculty/circle_portraits/b-srinivasulu_circle.jpg" },
-  { id: 3, name: "Kalyan Sir", role: "Reasoning Specialist", image: "/faculty/circle_portraits/kalyan_circle.jpg" },
-  { id: 4, name: "Shiva Shankar Sir", role: "GS & Polity Faculty", image: "/faculty/circle_portraits/shiva-shankar_circle.jpg" },
-  { id: 5, name: "Suparas Chand Jain Sir", role: "Geography & GK Specialist", image: "/faculty/circle_portraits/suparas-chand-jain_circle.jpg" },
-  { id: 6, name: "Thanuja Ma'am", role: "General Science Specialist", image: "/faculty/circle_portraits/thanuja_circle.jpg" },
-];
 
 export function HeroSlider() {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -398,68 +390,6 @@ export function HeroSlider() {
                 </div>
               </div>
 
-              {/* Widget 3: Live Video Grid with 6 Mentor Faces (Right of Character) */}
-              <div className="hidden lg:flex absolute right-0 sm:right-1 lg:-right-6 top-1/2 -translate-y-1/2 z-20 flex-col rounded-2xl bg-white/80 dark:bg-card/85 backdrop-blur-md p-3 sm:p-4 shadow-xl border border-white/80 dark:border-border">
-                {/* Header: LIVE Badge + Coaching Session */}
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="inline-flex items-center rounded-full bg-sky-500 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-white shadow-sm">
-                    LIVE
-                  </span>
-                  <span className="text-[11px] font-bold text-[#0f172a] dark:text-white tracking-tight">
-                    {currentCourse.shortName} Live Mentorship
-                  </span>
-                </div>
-
-                {/* 2x3 Grid with Mentor Faces */}
-                <div className="grid grid-cols-2 gap-2 w-[160px] sm:w-[190px]">
-                  {mentors.map((mentor, index) => (
-                    <div
-                      key={mentor.id}
-                      title={`${mentor.name} — ${mentor.role}`}
-                      className={`relative aspect-square w-full overflow-hidden rounded-xl bg-slate-200 shadow-sm transition-transform hover:scale-105 ${
-                        index === 0
-                          ? "ring-2 ring-sky-500 shadow-md shadow-sky-500/30"
-                          : "ring-1 ring-white/80"
-                      }`}
-                    >
-                      <Image
-                        src={mentor.image}
-                        alt={mentor.name}
-                        fill
-                        className="object-cover"
-                        sizes="95px"
-                      />
-                      {/* Active green indicator dot */}
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 flex size-2">
-                        <span className="size-2 rounded-full bg-emerald-500 ring-1 ring-white" />
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Bottom Attendee Stack */}
-                <div className="mt-3 flex items-center gap-2">
-                  <div className="flex -space-x-1.5">
-                    {mentors.slice(0, 4).map((m) => (
-                      <div
-                        key={m.id}
-                        className="relative size-5 shrink-0 overflow-hidden rounded-full ring-1 ring-white"
-                      >
-                        <Image
-                          src={m.image}
-                          alt={m.name}
-                          width={20}
-                          height={20}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-[11px] font-bold text-[#0f172a] dark:text-white">
-                    + 2,000+ Rankers
-                  </span>
-                </div>
-              </div>
 
             </div>
 
