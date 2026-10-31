@@ -285,11 +285,11 @@ export function HeroSlider() {
 
             </div>
 
-            {/* Right Column: Dynamic Course Character & Overlapping Badges */}
-            <div className="relative lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center min-h-[340px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[540px]">
+            {/* Right Column: Dynamic Course Character & Inset Visuals */}
+            <div className="relative lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center min-h-[360px] sm:min-h-[440px] md:min-h-[500px] lg:min-h-[560px] w-full">
               
-              {/* Center Character Portrait */}
-              <div className="relative z-10 w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/20 border border-white/60">
+              {/* Full Width Character Portrait (Fills the right area completely) */}
+              <div className="relative z-10 w-full h-[360px] sm:h-[440px] md:h-[500px] lg:h-[560px] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/20 border border-slate-200/80 dark:border-white/10">
                 <Image
                   key={currentCourse.image}
                   src={currentCourse.image}
@@ -297,16 +297,42 @@ export function HeroSlider() {
                   fill
                   className="object-cover object-top transition-all duration-500 animate-fade-in"
                   priority
-                  sizes="(max-width: 640px) 280px, (max-width: 768px) 340px, 420px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 650px"
                 />
 
                 {/* Bottom title banner on the character */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 text-white">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-amber-300">
-                    {currentCourse.shortName} Career Path
-                  </p>
-                  <p className="text-sm font-black truncate drop-shadow-sm">
-                    {currentCourse.targetPosts}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 sm:p-5 text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                    <div>
+                      <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-300">
+                        {currentCourse.shortName} Career Path
+                      </p>
+                      <p className="text-xs sm:text-sm md:text-base font-black truncate drop-shadow-sm">
+                        {currentCourse.targetPosts}
+                      </p>
+                    </div>
+                    <div className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur-md px-3 py-1 border border-white/30 text-xs font-bold text-white shrink-0">
+                      <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>2,000+ Selections</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Aspirants to Officers Circular Inset Badge (Matching Reference Banner) */}
+              <div className="hidden lg:flex absolute -right-3 xl:-right-6 top-6 z-20 flex-col items-center animate-fade-in">
+                <div className="relative size-28 xl:size-32 rounded-full overflow-hidden border-4 border-amber-400 shadow-2xl bg-white ring-4 ring-amber-400/30">
+                  <Image
+                    src="/images/hero/aspirants-circle.jpg"
+                    alt="Everest SSC Aspirants to Officers"
+                    fill
+                    className="object-cover"
+                    sizes="130px"
+                  />
+                </div>
+                <div className="mt-1.5 rounded-full bg-slate-900/90 dark:bg-card/95 backdrop-blur-md border border-amber-400/50 px-2.5 py-0.5 shadow-lg text-center">
+                  <p className="text-[9px] font-black text-amber-300 uppercase tracking-wider whitespace-nowrap">
+                    Aspirant → Officer
                   </p>
                 </div>
               </div>
@@ -328,17 +354,15 @@ export function HeroSlider() {
               </div>
 
               {/* Widget 1: Circular Goals / Selections Completed Badge (Top Left of Character) - visible on md+ */}
-              <div className="hidden md:flex absolute left-0 sm:left-2 lg:-left-6 top-4 sm:top-8 z-20 flex-col items-center justify-center rounded-full bg-white/95 backdrop-blur-md p-4 sm:p-5 shadow-xl border border-slate-100 animate-fade-in">
-                <div className="relative flex size-24 sm:size-28 flex-col items-center justify-center rounded-full border-[3px] border-slate-200 border-t-sky-500 border-r-sky-400 bg-white shadow-inner">
-                  <Users className="size-3.5 text-sky-500 mb-0.5" />
-                  <span className="text-base sm:text-lg font-black text-[#0f172a] tracking-tight">2,000+</span>
-                  <span className="text-[9px] font-semibold text-slate-500 leading-tight text-center px-1">
+              <div className="hidden md:flex absolute left-0 sm:left-2 lg:-left-5 top-4 sm:top-6 z-20 flex-col items-center justify-center rounded-full bg-white/95 backdrop-blur-md p-3.5 sm:p-4 shadow-xl border border-slate-100 animate-fade-in">
+                <div className="relative flex size-20 sm:size-24 flex-col items-center justify-center rounded-full border-[3px] border-slate-200 border-t-sky-500 border-r-sky-400 bg-white shadow-inner">
+                  <Users className="size-3 text-sky-500 mb-0.5" />
+                  <span className="text-sm sm:text-base font-black text-[#0f172a] tracking-tight">2,000+</span>
+                  <span className="text-[8px] sm:text-[9px] font-semibold text-slate-500 leading-tight text-center px-1">
                     SSC Selections<br />Completed
                   </span>
                 </div>
               </div>
-
-
 
             </div>
 
