@@ -117,20 +117,18 @@ export function HeroSlider() {
     setCurrentIdx((prev) => (prev - 1 + total) % total);
   }, [total]);
 
-  // Autoplay timer: auto-slide every 6 seconds when not hovered
+  // Autoplay timer: auto-slides reliably every 4.5 seconds
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
       handleNext();
-    }, 6000);
+    }, 4500);
     return () => clearInterval(timer);
-  }, [isPaused, handleNext]);
+  }, [isPaused, handleNext, currentIdx]);
 
   return (
     <section
       className="relative w-full px-3 sm:px-6 lg:px-8 py-2 md:py-3"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       <div className="mx-auto max-w-[1260px]">
         {/* Main Hero Card Container matching mockup 1:1 (Proportionately scaled) */}
@@ -166,8 +164,11 @@ export function HeroSlider() {
             </div>
           </div>
 
-          {/* Hero Content Area */}
-          <div className="relative z-10 w-full lg:w-[60%] xl:w-[55%] px-5 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
+          {/* Hero Content Area with smooth key fade */}
+          <div 
+            key={currentCourse.id} 
+            className="relative z-10 w-full lg:w-[60%] xl:w-[55%] px-5 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-8 flex flex-col justify-center animate-fade-in transition-all duration-500"
+          >
             
             {/* Top Badges */}
             <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-2.5">
@@ -218,7 +219,11 @@ export function HeroSlider() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-3.5 sm:mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
+            <div 
+              className="mt-3.5 sm:mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <a
                 href={`https://wa.me/919030030185?text=Hello%20Everest%20Coaching%20Point,%20I%20want%20to%20enroll%20in%20the%20${encodeURIComponent(currentCourse.title)}%20Batch.`}
                 target="_blank"
